@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_loop.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ynoam <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/09 22:18:46 by ynoam             #+#    #+#             */
-/*   Updated: 2020/10/23 17:36:11 by ynoam            ###   ########.fr       */
+/*   Created: 2020/03/17 20:44:06 by ynoam             #+#    #+#             */
+/*   Updated: 2020/10/15 20:30:53 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+#include "cub3d.h"
+
+/*
+** this function is a loop.
+*/
+
+int	ft_loop(int l_key)
 {
-	if (c >= 65 && c <= 90)
-		c = c + 32;
-	return (c);
+	ft_update(l_key);
+	if (g_player.turn || g_player.walk || g_player.lateral)
+		ft_draw();
+	g_player.turn = 0;
+	g_player.walk = 0;
+	g_player.lateral = 0;
+	return (0);
 }

@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_my_errors.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ynoam <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/09 22:18:46 by ynoam             #+#    #+#             */
-/*   Updated: 2020/10/23 17:36:11 by ynoam            ###   ########.fr       */
+/*   Created: 2020/10/18 11:58:28 by ynoam             #+#    #+#             */
+/*   Updated: 2020/10/18 12:08:51 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+#include "read_file.h"
+
+int	ft_my_errors(char *str)
 {
-	if (c >= 65 && c <= 90)
-		c = c + 32;
-	return (c);
+	ft_putstr_fd("wolf: error: ", 2);
+	ft_putstr_fd(str, 2);
+	ft_putstr_fd("\n", 2);
+	exit(EXIT_FAILURE);
+	return (1);
 }

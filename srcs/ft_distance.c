@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_distance.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ynoam <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/09 22:18:46 by ynoam             #+#    #+#             */
-/*   Updated: 2020/10/23 17:36:11 by ynoam            ###   ########.fr       */
+/*   Created: 2020/04/26 18:00:57 by ynoam             #+#    #+#             */
+/*   Updated: 2020/04/29 15:36:17 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+#include "cub3d.h"
+
+float	ft_distance(float x, float y)
 {
-	if (c >= 65 && c <= 90)
-		c = c + 32;
-	return (c);
+	float	var_x;
+	float	var_y;
+
+	var_x = x - g_player.x;
+	var_y = y - g_player.y;
+	return (sqrt((var_x * var_x) + (var_y * var_y)));
 }

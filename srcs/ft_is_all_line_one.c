@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_is_all_line_one.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ynoam <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/09 22:18:46 by ynoam             #+#    #+#             */
-/*   Updated: 2020/10/23 17:36:11 by ynoam            ###   ########.fr       */
+/*   Created: 2020/03/06 11:19:59 by ynoam             #+#    #+#             */
+/*   Updated: 2020/03/16 18:23:41 by yousseff         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+#include "read_file.h"
+
+int	ft_is_all_line_one(char *line)
 {
-	if (c >= 65 && c <= 90)
-		c = c + 32;
-	return (c);
+	int i;
+
+	i = 0;
+	while (line[i])
+	{
+		if (line[i] != ' ' && line[i++] != '1')
+			return (1);
+		i++;
+	}
+	return (0);
 }

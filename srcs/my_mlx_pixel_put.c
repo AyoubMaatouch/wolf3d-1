@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   my_mlx_pixel_put.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ynoam <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/09 22:18:46 by ynoam             #+#    #+#             */
-/*   Updated: 2020/10/23 17:36:11 by ynoam            ###   ########.fr       */
+/*   Created: 2020/04/13 23:04:42 by ynoam             #+#    #+#             */
+/*   Updated: 2020/10/16 20:35:09 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+#include "cub3d.h"
+
+void	my_mlx_pixel_put(t_images *img, int x, int y, int color)
 {
-	if (c >= 65 && c <= 90)
-		c = c + 32;
-	return (c);
+	char	*distination;
+
+	distination = img->addr + (y * img->line_length + x *
+			(img->bits_per_pixel / 8));
+	*(unsigned int*)distination = color;
 }

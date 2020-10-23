@@ -6,29 +6,35 @@
 #    By: ynoam </var/mail/ynoam>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/24 22:45:25 by ynoam             #+#    #+#              #
-#    Updated: 2020/10/22 17:57:59 by ynoam            ###   ########.fr        #
+#    Updated: 2020/10/23 18:19:29 by ynoam            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #
 NAME = cub3d
-SRC = *.c ../read_file/*.c ../libft/*.c
-CC = gcc -Werror -Wall -Wextra $(SRC)\
-	 -fsanitize=address\
-	 -lmlx -framework OpenGL -framework AppKit
+
+SRC = srcs/*.c
+
+CC = gcc -Werror -Wall -Wextra
+
+FRMWORK_FLG = -lmlx -framework OpenGL -framework AppKit
 
 all: $(NAME)
 
-$(NAME): $(SRC) cub3d.h Makefile
-	$(CC) -o $(NAME)
+$(NAME): $(SRC) srcs/* Makefile libft/*.c libft/libft.h
+	@make -C libft
+	@$(CC) $(SRC) libft/libft.a -o $(NAME) $(FRMWORK_FLG)
+#gcc -Werror -Wall -Wextra srcs/*.c libft/libft.a -o test
+	@echo "Compilation of $(NAME):	\033[1;32mOK\033[m"
 
 clean:
-	rm -f *.o
+	@rm -f libft/*.o
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f libft/libft.a $(NAME)
+	@echo "$(NAME):	Removing $(NAME)"
 
 re : fclean all
 
 run:
-	./$(NAME) ../maps/map2.cub
+	./$(NAME) maps/map2.cub

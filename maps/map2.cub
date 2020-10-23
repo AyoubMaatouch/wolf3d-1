@@ -1,9 +1,10 @@
 R 1300 700
-NO ../texture/eagle.xpm
-SO ../texture/eagle.xpm
-WE ../texture/eagle.xpm
-EA ../texture/eagle.xpm
-S ../texture/barrel.xpm
+NO texture/eagle.xpm
+SO texture/eagle.xpm
+WE texture/eagle.xpm
+EA texture/eagle.xpm
+S texture/eagle.xpm
+
 C 0,0,0
 F 0,0,0
      1111111111                11111111111111111111111111111111111111

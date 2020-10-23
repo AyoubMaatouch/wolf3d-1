@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 14:26:58 by ynoam             #+#    #+#             */
-/*   Updated: 2020/10/23 16:26:57 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/10/23 17:49:05 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@
 # include <string.h>
 # include <unistd.h>
 # include "../libft/libft.h"
-# include "../read_file/read_file.h"
+# include "read_file.h"
 
 /*
 ** Macros for LINUX.

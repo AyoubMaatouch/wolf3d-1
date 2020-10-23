@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_map_error.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ynoam <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/09 22:18:46 by ynoam             #+#    #+#             */
-/*   Updated: 2020/10/23 17:36:11 by ynoam            ###   ########.fr       */
+/*   Created: 2020/02/28 19:54:44 by ynoam             #+#    #+#             */
+/*   Updated: 2020/10/22 12:09:12 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+#include "read_file.h"
+
+/*
+** print the error and exit the programme;
+*/
+
+int	ft_map_error(void)
 {
-	if (c >= 65 && c <= 90)
-		c = c + 32;
-	return (c);
+	ft_putstr_fd("Error\ncub3d: The map is incorrect.\n", 2);
+	exit(EXIT_FAILURE);
+	return (1);
 }

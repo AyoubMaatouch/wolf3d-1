@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_texture_error.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ynoam <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/09 22:18:46 by ynoam             #+#    #+#             */
-/*   Updated: 2020/10/23 17:36:11 by ynoam            ###   ########.fr       */
+/*   Created: 2020/10/17 19:08:36 by ynoam             #+#    #+#             */
+/*   Updated: 2020/10/18 11:44:12 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+#include "cub3d.h"
+
+int	ft_texture_error(char *str)
 {
-	if (c >= 65 && c <= 90)
-		c = c + 32;
-	return (c);
+	ft_putstr_fd("wolf: error: ", 2);
+	ft_putstr_fd(str, 2);
+	exit(EXIT_FAILURE);
+	return (1);
 }

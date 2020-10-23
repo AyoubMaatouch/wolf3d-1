@@ -6,7 +6,7 @@
 /*   By: yousseff <ynoam@student.1337.ma>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/16 18:25:28 by yousseff          #+#    #+#             */
-/*   Updated: 2020/10/23 16:17:02 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/10/23 17:51:06 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 # include <stdio.h>
 # include <string.h>
 # include <unistd.h>
-# include "../draw/cub3d.h"
+# include "cub3d.h"
 
 /*
 ** Global variables.
