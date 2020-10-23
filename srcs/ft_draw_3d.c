@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/09 19:04:06 by ynoam             #+#    #+#             */
-/*   Updated: 2020/10/23 18:19:01 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/10/23 20:12:00 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,15 @@ void	ft_draw_3d(t_images *img, t_rays ray[])
 			{
 				texture_offset_y = (y - wall_top_pixel) * (g_txtr_n.height / wall_strip_height);
 				//color = *(g_txtr_n.addr + (texture_offset_y * (g_txtr_n.line_length) + texture_offset_x));
-				color = g_txtr_n.addr[texture_offset_y * (g_txtr_n.line_length) + texture_offset_x];
+				//color = g_txtr_n.addr[texture_offset_y * (g_txtr_n.line_length) + texture_offset_x];
 
-				//color = *(g_txtr_n.addr + ((texture_offset_y * g_txtr_n.line_length) + texture_offset_x ));
+			//	color = g_txtr_n.addr[1 +(texture_offset_y * g_txtr_n.line_length) + texture_offset_x];
+				color = (int)g_txtr_n.addr[(texture_offset_y * g_txtr_n.line_length) + texture_offset_x];
+			//	color = color << 24;
+			//	color = color | g_txtr_n.addr[2 + (texture_offset_y * g_txtr_n.line_length) + texture_offset_x];
+			//	color = color << 16;
+			//	color = color | g_txtr_n.addr[3 + (texture_offset_y * g_txtr_n.line_length) + texture_offset_x];
+				//color = RED;
 			}
 			else if (!(ray[i].was_hit_ver) && ray[i].is_rayfacing_down)
 			{
