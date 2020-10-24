@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 14:26:58 by ynoam             #+#    #+#             */
-/*   Updated: 2020/10/23 17:49:05 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/10/24 12:29:12 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,7 +148,7 @@ struct s_texture
 {
 	char	*file;
     void	*img;
-    char	*addr;
+    int 	*addr;
 	int		width;
 	int		height;
 	int		bpp;

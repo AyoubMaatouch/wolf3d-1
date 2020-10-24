@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/09 19:04:06 by ynoam             #+#    #+#             */
-/*   Updated: 2020/10/23 20:12:00 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/10/24 14:44:15 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,36 +48,34 @@ void	ft_draw_3d(t_images *img, t_rays ray[])
 			texture_offset_x = (int)ray[i].wall_hity % TILE_SIZE;
 		else
 			texture_offset_x = (int)ray[i].wall_hitx % TILE_SIZE;
+
+		int distance_from_top;
 		y = wall_top_pixel;
 		while (y < wall_bottom_pixel)
 		{
+			distance_from_top = y + (wall_strip_height / 2) - (g_data.win_height / 2);
 			if (!(ray[i].was_hit_ver) && ray[i].is_rayfacing_up)
 			{
-				texture_offset_y = (y - wall_top_pixel) * (g_txtr_n.height / wall_strip_height);
-				//color = *(g_txtr_n.addr + (texture_offset_y * (g_txtr_n.line_length) + texture_offset_x));
-				//color = g_txtr_n.addr[texture_offset_y * (g_txtr_n.line_length) + texture_offset_x];
-
-			//	color = g_txtr_n.addr[1 +(texture_offset_y * g_txtr_n.line_length) + texture_offset_x];
-				color = (int)g_txtr_n.addr[(texture_offset_y * g_txtr_n.line_length) + texture_offset_x];
-			//	color = color << 24;
-			//	color = color | g_txtr_n.addr[2 + (texture_offset_y * g_txtr_n.line_length) + texture_offset_x];
-			//	color = color << 16;
-			//	color = color | g_txtr_n.addr[3 + (texture_offset_y * g_txtr_n.line_length) + texture_offset_x];
-				//color = RED;
+				texture_offset_y = distance_from_top * ((float)g_txtr_n.width / wall_strip_height);
+				color = g_txtr_n.addr[(texture_offset_y * g_txtr_n.height) + texture_offset_x];
 			}
 			else if (!(ray[i].was_hit_ver) && ray[i].is_rayfacing_down)
 			{
-				color = ORANGE;
+				texture_offset_y = distance_from_top * ((float)g_txtr_s.width / wall_strip_height);
+				color = g_txtr_s.addr[(texture_offset_y * g_txtr_s.height) + texture_offset_x];
 			}
 			else if (ray[i].was_hit_ver && ray[i].is_rayfacing_left)
 			{
-				color = VIOLET;
+				texture_offset_y = distance_from_top * ((float)g_txtr_w.width / wall_strip_height);
+				color = g_txtr_w.addr[(texture_offset_y * g_txtr_w.height) + texture_offset_x];
 			}
 			else
 			{
-				color = YELLOW;
+				texture_offset_y = distance_from_top * ((float)g_txtr_e.width / wall_strip_height);
+				color = g_txtr_e.addr[(texture_offset_y * g_txtr_e.height) + texture_offset_x];
 			}
-			my_mlx_pixel_put(img, i, y++, color);
+			my_mlx_pixel_put(img, i, y, color);
+			y++;
 		}
 		y = wall_bottom_pixel;
 		while (y < g_data.win_height)
