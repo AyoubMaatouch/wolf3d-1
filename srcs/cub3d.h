@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 14:26:58 by ynoam             #+#    #+#             */
-/*   Updated: 2020/10/24 12:29:12 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/10/24 20:41:51 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,13 +82,17 @@
 ** Macro for Colors.
 */
 
-# define BLEU			255
-# define GREEN			(119 << 16 | 122 << 8 | 135)
 # define ORANGE			(255 << 16 | 127 << 8)
-# define RED			(255 << 16)
 # define VIOLET			(139 << 16 | 255)
 # define YELLOW			(255 << 16 | 255 << 8)
-# define WHITE			(255 << 16 | 255 << 8 | 255)
+# define RED 0xff0000
+# define WHITE 0xffffff
+# define GOLD 0xffd700
+# define BLUE 0x0000ff
+# define SKY 0x87ceeb
+# define GREEN 0x32CD32
+# define AQUA 0x00ffff
+# define BROWN 0xCD853F
 
 /*
 ** Global variables.
@@ -155,12 +159,13 @@ struct s_texture
 	int		line_length;
 	int		endian;
 };
-struct s_texture g_txtr_n;
-struct s_texture g_txtr_e;
-struct s_texture g_txtr_s;
-struct s_texture g_txtr_w;
-struct s_texture g_txtr_sprit;
 
+struct	s_texture g_txtr_n;
+struct	s_texture g_txtr_e;
+struct	s_texture g_txtr_s;
+struct	s_texture g_txtr_w;
+struct	s_texture g_txtr_sprit;
+int		g_sprit_num;
 
 /*
 ** My functions.
@@ -200,5 +205,6 @@ float	ft_distance(float x, float y);
 void	ft_update_player(void);
 void	ft_check_texture(void);
 int		my_pixel_get(int x, int y, int wich_txtr);
+void	ft_clc_sprit_num(void);
 
 #endif

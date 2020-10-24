@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/03 21:15:49 by ynoam             #+#    #+#             */
-/*   Updated: 2020/10/19 14:14:49 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/10/24 16:37:38 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,5 @@ void	ft_init_data(void)
 	g_txtr_sprit.file = NULL;
 	g_data.win_height = -1;
 	g_data.win_width = -1;
+	g_sprit_num = 0;
 }

@@ -36,6 +36,7 @@ MAC_LEFT_ARROW	srcs/cub3d.h	/^# define MAC_LEFT_ARROW	/;"	d
 MAC_RIGHT_ARROW	srcs/cub3d.h	/^# define MAC_RIGHT_ARROW	/;"	d
 MAC_UP_ARROW	srcs/cub3d.h	/^# define MAC_UP_ARROW	/;"	d
 MINIMAP_SCALE	srcs/cub3d.h	/^# define MINIMAP_SCALE	/;"	d
+MLX_H	/usr/local/include/mlx.h	/^#define	MLX_H$/;"	d
 NAME	libft/Makefile	/^NAME = libft.a$/;"	m
 ORANGE	srcs/cub3d.h	/^# define ORANGE	/;"	d
 READ_FILE_H	srcs/read_file.h	/^# define READ_FILE_H$/;"	d
