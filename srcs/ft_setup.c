@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/14 18:46:41 by ynoam             #+#    #+#             */
-/*   Updated: 2020/10/25 17:38:32 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/10/26 18:41:47 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,5 @@ void	ft_setup(const char *file)
 		ft_my_errors("fails to create a new window.");
 	ft_init_p_view();
 	ft_addr_of_texture_img();
-	ft_clc_sprit_num();
+	ft_find_sprit_pos();
 }

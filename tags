@@ -59,12 +59,15 @@ cast_all_rays	srcs/cast_all_rays.c	/^void	cast_all_rays(t_rays rays[])$/;"	f
 cast_ray	srcs/cast_ray.c	/^void	cast_ray(t_rays *ray)$/;"	f
 ceill	srcs/read_file.h	/^	int		ceill;$/;"	m	struct:s_data
 direction	srcs/cub3d.h	/^	float	direction;$/;"	m	struct:s_player
+distance	srcs/cub3d.h	/^	float			distance;$/;"	m	struct:s_sprit
 distance	srcs/cub3d.h	/^	float	distance;$/;"	m	struct:s_ray
+draw	srcs/cub3d.h	/^	int				draw;$/;"	m	struct:s_sprit
 endian	srcs/cub3d.h	/^	int		endian;$/;"	m	struct:s_images
 endian	srcs/cub3d.h	/^	int		endian;$/;"	m	struct:s_texture
 file	srcs/cub3d.h	/^	char	*file;$/;"	m	struct:s_texture
 floor	srcs/read_file.h	/^	int		floor;$/;"	m	struct:s_data
 forword	libft/ft_strtrim.c	/^static int		forword(char const *forstr, char const *forset)$/;"	f	file:
+ft_add_new_sprite	srcs/ft_add_new_sprite.c	/^t_sprit		*ft_add_new_sprite(int y, int x)$/;"	f
 ft_addr_of_texture_img	srcs/ft_addr_of_texture_img.c	/^void	ft_addr_of_texture_img(void)$/;"	f
 ft_atoi	libft/ft_atoi.c	/^int	ft_atoi(const char *str)$/;"	f
 ft_bzero	libft/ft_bzero.c	/^void	ft_bzero(void *string, size_t n)$/;"	f
@@ -73,13 +76,13 @@ ft_check_data	srcs/ft_check_data.c	/^void	ft_check_data(void)$/;"	f
 ft_check_map_line	srcs/ft_check_map_line.c	/^int	ft_check_map_line(char *str, int position)$/;"	f
 ft_check_texture	srcs/ft_check_texture.c	/^void	ft_check_texture(void)$/;"	f
 ft_check_texture_files	srcs/ft_check_texture_files.c	/^void	ft_check_texture_files(void)$/;"	f
-ft_clc_sprit_num	srcs/ft_clc_sprit_num.c	/^void	ft_clc_sprit_num(void)$/;"	f
 ft_cos	srcs/ft_cos.c	/^double	ft_cos(double angle)$/;"	f
 ft_distance	srcs/ft_distance.c	/^float	ft_distance(float x, float y)$/;"	f
 ft_draw	srcs/ft_draw.c	/^void	ft_draw(void)$/;"	f
 ft_draw_3d	srcs/ft_draw_3d.c	/^void	ft_draw_3d(t_images *img, t_rays ray[])$/;"	f
 ft_file_error	srcs/ft_file_error.c	/^int	ft_file_error(void)$/;"	f
 ft_file_extention	srcs/ft_file_extention.c	/^int	ft_file_extention(const char *filename)$/;"	f
+ft_find_sprit_pos	srcs/ft_find_sprit_pos.c	/^void	ft_find_sprit_pos(void)$/;"	f
 ft_free	libft/get_next_line.c	/^int	ft_free(char **ptr)$/;"	f
 ft_free_double_ptr	libft/ft_free_double_ptr.c	/^void	ft_free_double_ptr(char ***str)$/;"	f
 ft_from_newline	libft/get_next_line_utils.c	/^char	*ft_from_newline(char *string)$/;"	f
@@ -140,7 +143,7 @@ ft_update_player	srcs/ft_update_player.c	/^void	ft_update_player(void)$/;"	f
 fun	libft/ft_split.c	/^static int		fun(char const *s, char c)$/;"	f	file:
 g_data	srcs/read_file.h	/^}			g_data;$/;"	v	typeref:struct:s_data
 g_player	srcs/cub3d.h	/^}			g_player;$/;"	v	typeref:struct:s_player
-g_sprit_num	srcs/cub3d.h	/^int	g_sprit_num;$/;"	v
+g_sprits_ptr	srcs/cub3d.h	/^t_sprit	*g_sprits_ptr;$/;"	v
 g_txtr_e	srcs/cub3d.h	/^struct s_texture	g_txtr_e;$/;"	v	typeref:struct:s_texture
 g_txtr_n	srcs/cub3d.h	/^struct s_texture	g_txtr_n;$/;"	v	typeref:struct:s_texture
 g_txtr_s	srcs/cub3d.h	/^struct s_texture	g_txtr_s;$/;"	v	typeref:struct:s_texture
@@ -172,6 +175,7 @@ mlx_ptr	srcs/read_file.h	/^	void	*mlx_ptr;$/;"	m	struct:s_data
 mov_speed	srcs/cub3d.h	/^	float	mov_speed;$/;"	m	struct:s_player
 my_mlx_pixel_put	srcs/my_mlx_pixel_put.c	/^void	my_mlx_pixel_put(t_images *img, int x, int y, int color)$/;"	f
 my_pixel_get	srcs/my_pixel_get.c	/^int	my_pixel_get(int x, int y, int wich_txtr)$/;"	f
+next	srcs/cub3d.h	/^	struct s_sprit *next;$/;"	m	struct:s_sprit	typeref:struct:s_sprit::s_sprit
 player_view	srcs/read_file.h	/^	char	player_view;$/;"	m	struct:s_data
 radius	srcs/cub3d.h	/^	float	radius;$/;"	m	struct:s_player
 ray_angle	srcs/cub3d.h	/^	float	ray_angle;$/;"	m	struct:s_ray
@@ -182,10 +186,12 @@ s_data	srcs/read_file.h	/^struct		s_data$/;"	s
 s_images	srcs/cub3d.h	/^typedef	struct	s_images$/;"	s
 s_player	srcs/cub3d.h	/^struct		s_player$/;"	s
 s_ray	srcs/cub3d.h	/^typedef	struct	s_ray$/;"	s
+s_sprit	srcs/cub3d.h	/^typedef	struct	s_sprit$/;"	s
 s_texture	srcs/cub3d.h	/^struct			s_texture$/;"	s
 selection	srcs/selection.c	/^void	selection(char *line)$/;"	f
 t_images	srcs/cub3d.h	/^}				t_images;$/;"	t	typeref:struct:s_images
 t_rays	srcs/cub3d.h	/^}				t_rays;$/;"	t	typeref:struct:s_ray
+t_sprit	srcs/cub3d.h	/^}				t_sprit;$/;"	t	typeref:struct:s_sprit
 texture_e	srcs/read_file.h	/^	char	*texture_e;$/;"	m	struct:s_data
 texture_n	srcs/read_file.h	/^	char	*texture_n;$/;"	m	struct:s_data
 texture_s	srcs/read_file.h	/^	char	*texture_s;$/;"	m	struct:s_data
@@ -205,5 +211,7 @@ width	srcs/cub3d.h	/^	int		width;$/;"	m	struct:s_texture
 win_height	srcs/read_file.h	/^	int		win_height;$/;"	m	struct:s_data
 win_ptr	srcs/read_file.h	/^	void	*win_ptr;$/;"	m	struct:s_data
 win_width	srcs/read_file.h	/^	int		win_width;$/;"	m	struct:s_data
+x	srcs/cub3d.h	/^	float			x;$/;"	m	struct:s_sprit
 x	srcs/cub3d.h	/^	float	x;$/;"	m	struct:s_player
+y	srcs/cub3d.h	/^	float			y;$/;"	m	struct:s_sprit
 y	srcs/cub3d.h	/^	float	y;$/;"	m	struct:s_player

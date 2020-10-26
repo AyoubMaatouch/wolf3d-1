@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_distance.c                                      :+:      :+:    :+:   */
+/*   ft_add_new_sprite.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/26 18:00:57 by ynoam             #+#    #+#             */
-/*   Updated: 2020/10/26 19:02:33 by ynoam            ###   ########.fr       */
+/*   Created: 2020/10/26 18:03:03 by ynoam             #+#    #+#             */
+/*   Updated: 2020/10/26 18:54:20 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include	"cub3d.h"
 
-float	ft_distance(float x, float y)
+t_sprit		*ft_add_new_sprite(int y, int x)
 {
-	float	var_x;
-	float	var_y;
+	t_sprit	*new;
 
-	var_x = x - g_player.x;
-	var_y = y - g_player.y;
-	return (sqrt((var_x * var_x) + (var_y * var_y)));
+	new = malloc(sizeof(t_sprit));
+	new->x = x + 1;
+	new->y = y + 1;
+	new->next = NULL;
+	new->distance = 0.0;
+	new->draw = -1;
+	return (new);
 }

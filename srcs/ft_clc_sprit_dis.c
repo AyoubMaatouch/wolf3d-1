@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_clc_sprit_num.c                                 :+:      :+:    :+:   */
+/*   ft_clc_sprit_dis.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/24 20:24:10 by ynoam             #+#    #+#             */
-/*   Updated: 2020/10/24 20:51:22 by ynoam            ###   ########.fr       */
+/*   Created: 2020/10/26 18:58:13 by ynoam             #+#    #+#             */
+/*   Updated: 2020/10/26 19:10:31 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	ft_clc_sprit_num(void)
+void	ft_clc_sprit_dis(void)
 {
-	int i;
-	int j;
+	t_sprit	*ptr;
 
-	i = 0;
-	while (i < g_data.map_height)
+	ptr = g_sprits_ptr;
+	while(ptr != NULL)
 	{
-		j = 0;
-		while (j < (int)ft_strlen(g_data.map_ptr[i]))
-		{
-			if (g_data.map_ptr[i][j] == '2')
-				g_sprit_num++;
-			j++;
-		}
-		i++;
+		ptr->distance = ft_distance(ptr->x * TILE_SIZE, ptr->y * TILE_SIZE);
+		ptr = ptr->next;
 	}
 }

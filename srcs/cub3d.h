@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 14:26:58 by ynoam             #+#    #+#             */
-/*   Updated: 2020/10/25 18:04:23 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/10/26 19:02:54 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,6 +132,15 @@ struct			s_texture
 	int		endian;
 };
 
+typedef	struct	s_sprit
+{
+	float			x;
+	float			y;
+	float			distance;
+	int				draw;
+	struct s_sprit *next;
+}				t_sprit;
+
 /*
 ** Global variables.
 */
@@ -165,46 +174,47 @@ struct s_texture	g_txtr_s;
 struct s_texture	g_txtr_w;
 struct s_texture	g_txtr_sprit;
 
-int	g_sprit_num;
-
+t_sprit	*g_sprits_ptr;
 /*
 ** My functions.
 */
 
-void	ft_draw_rays_with_img(t_images *img, t_rays rays[]);
-void	ft_draw_column(t_images *img, float x, float y, float height);
-void	ft_draw_3d(t_images *img, t_rays ray[]);
-void	cast_all_rays(t_rays l_rays[]);
-void	my_mlx_pixel_put(t_images *data, int x, int y, int color);
-void	ft_check_data(void);
-void	cast_ray(t_rays *pointer);
-void	ft_addr_of_texture_img();
 double	ft_cos(double angle);
 double	ft_sin(double angle);
+float	ft_distance(float x, float y);
 float	ft_tan(float l_angle);
-void	ft_ray_is_facing(t_rays *ray);
-int		has_wall_at(float x, float y);
-void	ft_draw(void);
-void	ft_draw_circle(double x, double y);
-void	ft_draw_map_2d(void);
-void	ft_draw_player(void);
-void	ft_draw_square(int x, int y, int color);
-void	ft_init_p_view(void);
-void	ft_setup(const char *file);
-void	ft_update(int l_key);
-void	ft_draw_all_rays(t_rays l_rays[]);
 int		ft_loop(int l_key);
-int		ft_texture_error(char *str);
 int		ft_red_bouton(int key);
+int		ft_texture_error(char *str);
+int		has_wall_at(float x, float y);
+int		my_pixel_get(int x, int y, int wich_txtr);
+t_sprit	*ft_add_new_sprite(int y, int x);
+void	cast_all_rays(t_rays l_rays[]);
+void	cast_ray(t_rays *pointer);
+void	ft_addr_of_texture_img();
+void	ft_check_data(void);
+void	ft_check_texture(void);
+void	ft_clc_sprit_dis(void);
+void	ft_draw(void);
+void	ft_draw_3d(t_images *img, t_rays ray[]);
+void	ft_draw_all_rays(t_rays l_rays[]);
+void	ft_draw_circle(double x, double y);
 void	ft_draw_circle_with_img(t_images *img, float x, float y);
+void	ft_draw_column(t_images *img, float x, float y, float height);
+void	ft_draw_map_2d(void);
 void	ft_draw_map_2d_with_img(t_images *img);
 void	ft_draw_p_2d_with_img(t_images *img);
-void	ft_draw_square_with_img(t_images *img, int x, int y, int color);
 void	ft_draw_p_direction(t_images *img);
-float	ft_distance(float x, float y);
+void	ft_draw_player(void);
+void	ft_draw_rays_with_img(t_images *img, t_rays rays[]);
+void	ft_draw_square(int x, int y, int color);
+void	ft_draw_square_with_img(t_images *img, int x, int y, int color);
+void	ft_find_sprit_pos(void);
+void	ft_init_p_view(void);
+void	ft_ray_is_facing(t_rays *ray);
+void	ft_setup(const char *file);
+void	ft_update(int l_key);
 void	ft_update_player(void);
-void	ft_check_texture(void);
-int		my_pixel_get(int x, int y, int wich_txtr);
-void	ft_clc_sprit_num(void);
+void	my_mlx_pixel_put(t_images *data, int x, int y, int color);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/28 19:44:24 by ynoam             #+#    #+#             */
-/*   Updated: 2020/10/25 17:42:38 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/10/26 18:46:08 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,8 @@ int	ft_check_map_line(char *str, int position)
 			g_data.player_view = str[i];
 			i++;
 		}
-		else if (str[i] == '0' || str[i] == '1')
-			i++;
-		else if (str[i] == '2' && ++i)
-			g_sprit_num++;
-		else if (str[i] == ' ')
+		else if (str[i] == '0' || str[i] == '1' || str[i] == '2'
+				|| str[i] == ' ')
 			i++;
 		else
 			ft_map_error();
