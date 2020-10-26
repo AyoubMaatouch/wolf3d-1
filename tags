@@ -76,6 +76,7 @@ ft_check_data	srcs/ft_check_data.c	/^void	ft_check_data(void)$/;"	f
 ft_check_map_line	srcs/ft_check_map_line.c	/^int	ft_check_map_line(char *str, int position)$/;"	f
 ft_check_texture	srcs/ft_check_texture.c	/^void	ft_check_texture(void)$/;"	f
 ft_check_texture_files	srcs/ft_check_texture_files.c	/^void	ft_check_texture_files(void)$/;"	f
+ft_clc_sprit_dis	srcs/ft_clc_sprit_dis.c	/^void	ft_clc_sprit_dis(void)$/;"	f
 ft_cos	srcs/ft_cos.c	/^double	ft_cos(double angle)$/;"	f
 ft_distance	srcs/ft_distance.c	/^float	ft_distance(float x, float y)$/;"	f
 ft_draw	srcs/ft_draw.c	/^void	ft_draw(void)$/;"	f
