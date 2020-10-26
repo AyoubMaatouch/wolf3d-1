@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 14:26:58 by ynoam             #+#    #+#             */
-/*   Updated: 2020/10/24 20:41:51 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/10/25 18:04:23 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 
 #ifndef CUB3D_H
 # define CUB3D_H
-
 
 /*
 ** Include header files.
@@ -95,6 +94,45 @@
 # define BROWN 0xCD853F
 
 /*
+** My data type.
+*/
+
+typedef	struct	s_ray
+{
+	float	ray_angle;
+	float	wall_hitx;
+	float	wall_hity;
+	float	distance;
+	int		was_hit_ver;
+	int		is_rayfacing_up;
+	int		is_rayfacing_down;
+	int		is_rayfacing_left;
+	int		is_rayfacing_right;
+	int		wall_content;
+}				t_rays;
+
+typedef	struct	s_images
+{
+	void	*img;
+	char	*addr;
+	int		bits_per_pixel;
+	int		line_length;
+	int		endian;
+}				t_images;
+
+struct			s_texture
+{
+	char	*file;
+	void	*img;
+	int		*addr;
+	int		width;
+	int		height;
+	int		bpp;
+	int		line_length;
+	int		endian;
+};
+
+/*
 ** Global variables.
 */
 
@@ -121,51 +159,13 @@ struct		s_player
 	int		lateral;
 }			g_player;
 
-/*
-** My data type.
-*/
+struct s_texture	g_txtr_n;
+struct s_texture	g_txtr_e;
+struct s_texture	g_txtr_s;
+struct s_texture	g_txtr_w;
+struct s_texture	g_txtr_sprit;
 
-typedef  struct		s_ray
-{
-	float	ray_angle;
-	float	wall_hitx;
-	float	wall_hity;
-	float	distance;
-	int	was_hit_ver;
-	int	is_rayfacing_up;
-	int	is_rayfacing_down;
-	int	is_rayfacing_left;
-	int	is_rayfacing_right;
-	int	wall_content;
-}			t_rays;
-
-typedef	struct	s_images
-{
-    void	*img;
-    char	*addr;
-    int		bits_per_pixel;
-    int		line_length;
-    int		endian;
-}				t_images;
-
-struct s_texture
-{
-	char	*file;
-    void	*img;
-    int 	*addr;
-	int		width;
-	int		height;
-	int		bpp;
-	int		line_length;
-	int		endian;
-};
-
-struct	s_texture g_txtr_n;
-struct	s_texture g_txtr_e;
-struct	s_texture g_txtr_s;
-struct	s_texture g_txtr_w;
-struct	s_texture g_txtr_sprit;
-int		g_sprit_num;
+int	g_sprit_num;
 
 /*
 ** My functions.

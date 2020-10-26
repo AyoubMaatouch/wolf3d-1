@@ -4,14 +4,17 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-BLEU	srcs/cub3d.h	/^# define BLEU	/;"	d
+AQUA	srcs/cub3d.h	/^# define AQUA /;"	d
+BLUE	srcs/cub3d.h	/^# define BLUE /;"	d
+BROWN	srcs/cub3d.h	/^# define BROWN /;"	d
 BUFFER_SIZE	libft/get_next_line.h	/^# define BUFFER_SIZE /;"	d
 CC	libft/Makefile	/^CC = gcc -Wall -Wextra -Werror -c $(SRC) && ar rc $(NAME) *.o && ranlib $(NAME)$/;"	m
 CUB3D_H	srcs/cub3d.h	/^# define CUB3D_H$/;"	d
 FALSE	srcs/cub3d.h	/^# define FALSE	/;"	d
 FOV_ANGLE	srcs/cub3d.h	/^# define FOV_ANGLE	/;"	d
 GET_NEXT_LINE_H	libft/get_next_line.h	/^# define GET_NEXT_LINE_H$/;"	d
-GREEN	srcs/cub3d.h	/^# define GREEN	/;"	d
+GOLD	srcs/cub3d.h	/^# define GOLD /;"	d
+GREEN	srcs/cub3d.h	/^# define GREEN /;"	d
 LIBFT_H	libft/libft.h	/^# define LIBFT_H$/;"	d
 LINUX_DOWN_ARROW	srcs/cub3d.h	/^# define LINUX_DOWN_ARROW	/;"	d
 LINUX_KEY_ESC	srcs/cub3d.h	/^# define LINUX_KEY_ESC /;"	d
@@ -36,29 +39,29 @@ MAC_LEFT_ARROW	srcs/cub3d.h	/^# define MAC_LEFT_ARROW	/;"	d
 MAC_RIGHT_ARROW	srcs/cub3d.h	/^# define MAC_RIGHT_ARROW	/;"	d
 MAC_UP_ARROW	srcs/cub3d.h	/^# define MAC_UP_ARROW	/;"	d
 MINIMAP_SCALE	srcs/cub3d.h	/^# define MINIMAP_SCALE	/;"	d
-MLX_H	/usr/local/include/mlx.h	/^#define	MLX_H$/;"	d
 NAME	libft/Makefile	/^NAME = libft.a$/;"	m
 ORANGE	srcs/cub3d.h	/^# define ORANGE	/;"	d
 READ_FILE_H	srcs/read_file.h	/^# define READ_FILE_H$/;"	d
-RED	srcs/cub3d.h	/^# define RED	/;"	d
+RED	srcs/cub3d.h	/^# define RED /;"	d
+SKY	srcs/cub3d.h	/^# define SKY /;"	d
 SRC	libft/Makefile	/^SRC = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c\\$/;"	m
 TILE_SIZE	srcs/cub3d.h	/^# define TILE_SIZE	/;"	d
 TRUE	srcs/cub3d.h	/^# define TRUE	/;"	d
 VIOLET	srcs/cub3d.h	/^# define VIOLET	/;"	d
-WHITE	srcs/cub3d.h	/^# define WHITE	/;"	d
+WHITE	srcs/cub3d.h	/^# define WHITE /;"	d
 YELLOW	srcs/cub3d.h	/^# define YELLOW	/;"	d
-addr	srcs/cub3d.h	/^    char	*addr;$/;"	m	struct:s_images
-addr	srcs/cub3d.h	/^    char	*addr;$/;"	m	struct:s_texture
+addr	srcs/cub3d.h	/^	char	*addr;$/;"	m	struct:s_images
+addr	srcs/cub3d.h	/^	int		*addr;$/;"	m	struct:s_texture
 backword	libft/ft_strtrim.c	/^static int		backword(char const *backstr, char const *backset, int ending)$/;"	f	file:
-bits_per_pixel	srcs/cub3d.h	/^    int		bits_per_pixel;$/;"	m	struct:s_images
+bits_per_pixel	srcs/cub3d.h	/^	int		bits_per_pixel;$/;"	m	struct:s_images
 bpp	srcs/cub3d.h	/^	int		bpp;$/;"	m	struct:s_texture
 cast_all_rays	srcs/cast_all_rays.c	/^void	cast_all_rays(t_rays rays[])$/;"	f
 cast_ray	srcs/cast_ray.c	/^void	cast_ray(t_rays *ray)$/;"	f
 ceill	srcs/read_file.h	/^	int		ceill;$/;"	m	struct:s_data
 direction	srcs/cub3d.h	/^	float	direction;$/;"	m	struct:s_player
 distance	srcs/cub3d.h	/^	float	distance;$/;"	m	struct:s_ray
+endian	srcs/cub3d.h	/^	int		endian;$/;"	m	struct:s_images
 endian	srcs/cub3d.h	/^	int		endian;$/;"	m	struct:s_texture
-endian	srcs/cub3d.h	/^    int		endian;$/;"	m	struct:s_images
 file	srcs/cub3d.h	/^	char	*file;$/;"	m	struct:s_texture
 floor	srcs/read_file.h	/^	int		floor;$/;"	m	struct:s_data
 forword	libft/ft_strtrim.c	/^static int		forword(char const *forstr, char const *forset)$/;"	f	file:
@@ -70,6 +73,7 @@ ft_check_data	srcs/ft_check_data.c	/^void	ft_check_data(void)$/;"	f
 ft_check_map_line	srcs/ft_check_map_line.c	/^int	ft_check_map_line(char *str, int position)$/;"	f
 ft_check_texture	srcs/ft_check_texture.c	/^void	ft_check_texture(void)$/;"	f
 ft_check_texture_files	srcs/ft_check_texture_files.c	/^void	ft_check_texture_files(void)$/;"	f
+ft_clc_sprit_num	srcs/ft_clc_sprit_num.c	/^void	ft_clc_sprit_num(void)$/;"	f
 ft_cos	srcs/ft_cos.c	/^double	ft_cos(double angle)$/;"	f
 ft_distance	srcs/ft_distance.c	/^float	ft_distance(float x, float y)$/;"	f
 ft_draw	srcs/ft_draw.c	/^void	ft_draw(void)$/;"	f
@@ -136,11 +140,12 @@ ft_update_player	srcs/ft_update_player.c	/^void	ft_update_player(void)$/;"	f
 fun	libft/ft_split.c	/^static int		fun(char const *s, char c)$/;"	f	file:
 g_data	srcs/read_file.h	/^}			g_data;$/;"	v	typeref:struct:s_data
 g_player	srcs/cub3d.h	/^}			g_player;$/;"	v	typeref:struct:s_player
-g_txtr_e	srcs/cub3d.h	/^struct s_texture g_txtr_e;$/;"	v	typeref:struct:s_texture
-g_txtr_n	srcs/cub3d.h	/^struct s_texture g_txtr_n;$/;"	v	typeref:struct:s_texture
-g_txtr_s	srcs/cub3d.h	/^struct s_texture g_txtr_s;$/;"	v	typeref:struct:s_texture
-g_txtr_sprit	srcs/cub3d.h	/^struct s_texture g_txtr_sprit;$/;"	v	typeref:struct:s_texture
-g_txtr_w	srcs/cub3d.h	/^struct s_texture g_txtr_w;$/;"	v	typeref:struct:s_texture
+g_sprit_num	srcs/cub3d.h	/^int	g_sprit_num;$/;"	v
+g_txtr_e	srcs/cub3d.h	/^struct s_texture	g_txtr_e;$/;"	v	typeref:struct:s_texture
+g_txtr_n	srcs/cub3d.h	/^struct s_texture	g_txtr_n;$/;"	v	typeref:struct:s_texture
+g_txtr_s	srcs/cub3d.h	/^struct s_texture	g_txtr_s;$/;"	v	typeref:struct:s_texture
+g_txtr_sprit	srcs/cub3d.h	/^struct s_texture	g_txtr_sprit;$/;"	v	typeref:struct:s_texture
+g_txtr_w	srcs/cub3d.h	/^struct s_texture	g_txtr_w;$/;"	v	typeref:struct:s_texture
 get_color	srcs/get_color.c	/^int		get_color(char *strim)$/;"	f
 get_next_line	libft/get_next_line.c	/^int	get_next_line(int fd, char **line)$/;"	f
 get_resolution	srcs/get_resolution.c	/^void	get_resolution(char *strim)$/;"	f
@@ -148,16 +153,16 @@ get_rgb	srcs/get_rgb.c	/^int	get_rgb(char *str)$/;"	f
 get_texture	srcs/get_texture.c	/^char	*get_texture(char *strim)$/;"	f
 has_wall_at	srcs/has_wall_at.c	/^int	has_wall_at(float x, float y)$/;"	f
 height	srcs/cub3d.h	/^	int		height;$/;"	m	struct:s_texture
-img	srcs/cub3d.h	/^    void	*img;$/;"	m	struct:s_images
-img	srcs/cub3d.h	/^    void	*img;$/;"	m	struct:s_texture
-is_rayfacing_down	srcs/cub3d.h	/^	int	is_rayfacing_down;$/;"	m	struct:s_ray
-is_rayfacing_left	srcs/cub3d.h	/^	int	is_rayfacing_left;$/;"	m	struct:s_ray
-is_rayfacing_right	srcs/cub3d.h	/^	int	is_rayfacing_right;$/;"	m	struct:s_ray
-is_rayfacing_up	srcs/cub3d.h	/^	int	is_rayfacing_up;$/;"	m	struct:s_ray
+img	srcs/cub3d.h	/^	void	*img;$/;"	m	struct:s_images
+img	srcs/cub3d.h	/^	void	*img;$/;"	m	struct:s_texture
+is_rayfacing_down	srcs/cub3d.h	/^	int		is_rayfacing_down;$/;"	m	struct:s_ray
+is_rayfacing_left	srcs/cub3d.h	/^	int		is_rayfacing_left;$/;"	m	struct:s_ray
+is_rayfacing_right	srcs/cub3d.h	/^	int		is_rayfacing_right;$/;"	m	struct:s_ray
+is_rayfacing_up	srcs/cub3d.h	/^	int		is_rayfacing_up;$/;"	m	struct:s_ray
 lateral	srcs/cub3d.h	/^	int		lateral;$/;"	m	struct:s_player
 len	libft/get_next_line_utils.c	/^size_t	len(char *str)$/;"	f
+line_length	srcs/cub3d.h	/^	int		line_length;$/;"	m	struct:s_images
 line_length	srcs/cub3d.h	/^	int		line_length;$/;"	m	struct:s_texture
-line_length	srcs/cub3d.h	/^    int		line_length;$/;"	m	struct:s_images
 main	srcs/main.c	/^int	main(int argc, char *argv[])$/;"	f
 map_height	srcs/read_file.h	/^	int		map_height;$/;"	m	struct:s_data
 map_ptr	srcs/read_file.h	/^	char	**map_ptr;$/;"	m	struct:s_data
@@ -176,11 +181,11 @@ rotation	srcs/cub3d.h	/^	float	rotation;$/;"	m	struct:s_player
 s_data	srcs/read_file.h	/^struct		s_data$/;"	s
 s_images	srcs/cub3d.h	/^typedef	struct	s_images$/;"	s
 s_player	srcs/cub3d.h	/^struct		s_player$/;"	s
-s_ray	srcs/cub3d.h	/^typedef  struct		s_ray$/;"	s
-s_texture	srcs/cub3d.h	/^struct s_texture$/;"	s
+s_ray	srcs/cub3d.h	/^typedef	struct	s_ray$/;"	s
+s_texture	srcs/cub3d.h	/^struct			s_texture$/;"	s
 selection	srcs/selection.c	/^void	selection(char *line)$/;"	f
 t_images	srcs/cub3d.h	/^}				t_images;$/;"	t	typeref:struct:s_images
-t_rays	srcs/cub3d.h	/^}			t_rays;$/;"	t	typeref:struct:s_ray
+t_rays	srcs/cub3d.h	/^}				t_rays;$/;"	t	typeref:struct:s_ray
 texture_e	srcs/read_file.h	/^	char	*texture_e;$/;"	m	struct:s_data
 texture_n	srcs/read_file.h	/^	char	*texture_n;$/;"	m	struct:s_data
 texture_s	srcs/read_file.h	/^	char	*texture_s;$/;"	m	struct:s_data
@@ -192,10 +197,10 @@ thefunlen	libft/ft_itoa.c	/^static int	thefunlen(unsigned int copy)$/;"	f	file:
 turn	srcs/cub3d.h	/^	int		turn;$/;"	m	struct:s_player
 vimmercopy	libft/ft_memmove.c	/^static void	*vimmercopy(void *distination2, const void *source2, size_t len)$/;"	f	file:
 walk	srcs/cub3d.h	/^	int		walk;$/;"	m	struct:s_player
-wall_content	srcs/cub3d.h	/^	int	wall_content;$/;"	m	struct:s_ray
+wall_content	srcs/cub3d.h	/^	int		wall_content;$/;"	m	struct:s_ray
 wall_hitx	srcs/cub3d.h	/^	float	wall_hitx;$/;"	m	struct:s_ray
 wall_hity	srcs/cub3d.h	/^	float	wall_hity;$/;"	m	struct:s_ray
-was_hit_ver	srcs/cub3d.h	/^	int	was_hit_ver;$/;"	m	struct:s_ray
+was_hit_ver	srcs/cub3d.h	/^	int		was_hit_ver;$/;"	m	struct:s_ray
 width	srcs/cub3d.h	/^	int		width;$/;"	m	struct:s_texture
 win_height	srcs/read_file.h	/^	int		win_height;$/;"	m	struct:s_data
 win_ptr	srcs/read_file.h	/^	void	*win_ptr;$/;"	m	struct:s_data
