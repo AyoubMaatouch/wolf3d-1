@@ -6,7 +6,7 @@
 #    By: ynoam </var/mail/ynoam>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/24 22:45:25 by ynoam             #+#    #+#              #
-#    Updated: 2020/10/26 17:36:49 by ynoam            ###   ########.fr        #
+#    Updated: 2020/10/26 17:41:18 by ynoam            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,5 +39,5 @@ run:
 	./$(NAME) maps/map2.cub
 push:
 	git add .
-	git commit -m %1
+	git commit --allow-empty-message
 	git push
