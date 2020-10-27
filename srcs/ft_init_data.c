@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/03 21:15:49 by ynoam             #+#    #+#             */
-/*   Updated: 2020/10/26 18:47:46 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/10/26 20:47:37 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_init_data(void)
 {
 	g_player.mov_speed = TILE_SIZE / 4;
-	g_player.rotation = 5.0;
+	g_player.rotation = 7.0;
 	g_player.radius = 10.0;
 	g_player.walk = 0;
 	g_player.turn = 0;

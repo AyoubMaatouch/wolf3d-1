@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/24 20:24:10 by ynoam             #+#    #+#             */
-/*   Updated: 2020/10/26 18:48:36 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/10/27 14:49:43 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,8 @@ void	ft_find_sprit_pos(void)
 		{
 			if (g_data.map_ptr[i][j] == '2')
 			{
-				if (head == NULL)
-				{
+				if (head == NULL && (g_sprits_ptr = head))
 					head = ft_add_new_sprite(i, j);
-					g_sprits_ptr = head;
-				}
 				else
 				{
 					head->next = ft_add_new_sprite(i, j);

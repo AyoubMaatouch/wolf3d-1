@@ -6,7 +6,7 @@
 #    By: ynoam </var/mail/ynoam>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/24 22:45:25 by ynoam             #+#    #+#              #
-#    Updated: 2020/10/26 17:50:26 by ynoam            ###   ########.fr        #
+#    Updated: 2020/10/26 19:52:18 by ynoam            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,10 @@ NAME = cub3d
 
 SRC = srcs/*.c
 
-CC = gcc -Werror -Wall -Wextra -g -fsanitize=address
+DEBUG =
+#DEBUG = -g -fsanitize=address
+
+CC = gcc -Werror -Wall -Wextra
 
 FRMWORK_FLG = -lmlx -framework OpenGL -framework AppKit
 
@@ -23,7 +26,7 @@ all: $(NAME)
 
 $(NAME): $(SRC) srcs/* Makefile libft/*.c libft/libft.h
 	@make -C libft
-	@$(CC) $(SRC) libft/libft.a -o $(NAME) $(FRMWORK_FLG)
+	@$(CC) $(DEBUG) $(SRC) libft/libft.a -o $(NAME) $(FRMWORK_FLG)
 	@echo "Compilation of $(NAME):	\033[1;32mOK\033[m"
 
 clean:
