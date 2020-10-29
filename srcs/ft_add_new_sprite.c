@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 18:03:03 by ynoam             #+#    #+#             */
-/*   Updated: 2020/10/26 18:54:20 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/10/27 18:01:30 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,5 @@ t_sprit		*ft_add_new_sprite(int y, int x)
 	new->y = y + 1;
 	new->next = NULL;
 	new->distance = 0.0;
-	new->draw = -1;
 	return (new);
 }

@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_clc_sprit_dis.c                                 :+:      :+:    :+:   */
+/*   ft_swap_sprit_conts.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/26 18:58:13 by ynoam             #+#    #+#             */
-/*   Updated: 2020/10/27 17:47:16 by ynoam            ###   ########.fr       */
+/*   Created: 2020/10/27 17:35:54 by ynoam             #+#    #+#             */
+/*   Updated: 2020/10/27 17:42:48 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	ft_clc_sprit_dis(void)
+void	ft_swap_sprit_conts(t_sprit *one, t_sprit *two)
 {
-	t_sprit	*ptr;
-	t_sprit	*tmp;
+	float	x;
+	float	y;
+	float	distance;
 
-	ptr = g_sprits_ptr;
-	while(ptr != NULL)
-	{
-		ptr->distance = ft_distance(ptr->x * TILE_SIZE, ptr->y * TILE_SIZE);
-		ptr = ptr->next;
-	}
-	ptr = g_sprits_ptr;
-	while(ptr != NULL)
-	{
-		tmp = ptr;
-		ptr = ptr->next;
-		if (ptr != NULL)
-			if (tmp->distance < ptr->distance)
-				ft_swap_sprit_conts(tmp, ptr);
-	}
+	x = one->x;
+	y = one->y;
+	distance = one->distance;
+	one->x = two->x;
+	one->y = two->y;
+	one->distance = two->distance;
+	two->y = y;
+	two->x = x;
+	two->distance = distance;
 }

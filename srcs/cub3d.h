@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 14:26:58 by ynoam             #+#    #+#             */
-/*   Updated: 2020/10/26 20:32:36 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/10/27 17:43:02 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,7 +137,6 @@ typedef	struct	s_sprit
 	float			x;
 	float			y;
 	float			distance;
-	int				draw;
 	struct s_sprit *next;
 }				t_sprit;
 
@@ -216,5 +215,6 @@ void	ft_setup(const char *file);
 void	ft_update(int l_key);
 void	ft_update_player(void);
 void	my_mlx_pixel_put(t_images *data, int x, int y, int color);
+void	ft_swap_sprit_conts(t_sprit *one, t_sprit *two);
 
 #endif

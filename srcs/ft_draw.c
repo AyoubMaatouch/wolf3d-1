@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 19:47:08 by ynoam             #+#    #+#             */
-/*   Updated: 2020/10/27 11:24:37 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/10/27 19:02:03 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ void	ft_draw(void)
 			&img.line_length, &img.endian);
 	ft_update_player();
 	cast_all_rays(rays);
-	ft_clc_sprit_dis();
 	ft_draw_3d(&img, rays);
+	ft_clc_sprit_dis();
 	mlx_put_image_to_window(g_data.mlx_ptr, g_data.win_ptr, img.img, 0, 0);
 	mlx_destroy_image(g_data.mlx_ptr, img.img);
 }

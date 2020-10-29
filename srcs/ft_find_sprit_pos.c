@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/24 20:24:10 by ynoam             #+#    #+#             */
-/*   Updated: 2020/10/27 14:49:43 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/10/27 18:56:24 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ void	ft_find_sprit_pos(void)
 {
 	int		i;
 	int		j;
-	t_sprit	*head;
+	t_sprit	*tmp;
 
-	head = NULL;
+//	tmp = NULL;
 	i = 0;
 	while (i < g_data.map_height)
 	{
@@ -27,12 +27,13 @@ void	ft_find_sprit_pos(void)
 		{
 			if (g_data.map_ptr[i][j] == '2')
 			{
-				if (head == NULL && (g_sprits_ptr = head))
-					head = ft_add_new_sprite(i, j);
+				if (g_sprits_ptr == NULL)
+					g_sprits_ptr = ft_add_new_sprite(i, j);
 				else
 				{
-					head->next = ft_add_new_sprite(i, j);
-					head = head->next;
+					tmp = ft_add_new_sprite(i, j);
+					tmp->next = g_sprits_ptr;
+					g_sprits_ptr = tmp;
 				}
 			}
 			j++;
