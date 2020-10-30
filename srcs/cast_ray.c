@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/17 15:38:43 by ynoam             #+#    #+#             */
-/*   Updated: 2020/10/24 19:07:40 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/10/30 19:53:39 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,12 +57,8 @@ void	cast_ray(t_rays *ray)
 			found_hoz_wall = TRUE;
 			break ;
 		}
-		else
-		{
-			nxt_hor_x += xstep;
-			nxt_hor_y += ystep;
-		}
-
+		nxt_hor_x += xstep;
+		nxt_hor_y += ystep;
 	}
 
 
@@ -106,11 +102,8 @@ void	cast_ray(t_rays *ray)
 			found_ver_wall = TRUE;
 			break ;
 		}
-		else
-		{
-			nxt_ver_x += xstep;
-			nxt_ver_y += ystep;
-		}
+		nxt_ver_x += xstep;
+		nxt_ver_y += ystep;
 	}
 	float	hor_hit_dis = found_hoz_wall ? ft_distance(hor_wall_x, hor_wall_y) : INT_MAX;
 	float	ver_hit_dis = found_ver_wall ? ft_distance(ver_wall_x, ver_wall_y) : INT_MAX;

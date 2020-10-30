@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 14:26:58 by ynoam             #+#    #+#             */
-/*   Updated: 2020/10/27 17:43:02 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/10/30 20:05:55 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,9 +134,10 @@ struct			s_texture
 
 typedef	struct	s_sprit
 {
-	float			x;
-	float			y;
-	float			distance;
+	float	x;
+	float	y;
+	float	distance;
+	int		visible;
 	struct s_sprit *next;
 }				t_sprit;
 
@@ -216,5 +217,6 @@ void	ft_update(int l_key);
 void	ft_update_player(void);
 void	my_mlx_pixel_put(t_images *data, int x, int y, int color);
 void	ft_swap_sprit_conts(t_sprit *one, t_sprit *two);
+void	ft_is_sprit_visible();
 
 #endif

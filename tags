@@ -59,9 +59,8 @@ cast_all_rays	srcs/cast_all_rays.c	/^void	cast_all_rays(t_rays rays[])$/;"	f
 cast_ray	srcs/cast_ray.c	/^void	cast_ray(t_rays *ray)$/;"	f
 ceill	srcs/read_file.h	/^	int		ceill;$/;"	m	struct:s_data
 direction	srcs/cub3d.h	/^	float	direction;$/;"	m	struct:s_player
-distance	srcs/cub3d.h	/^	float			distance;$/;"	m	struct:s_sprit
 distance	srcs/cub3d.h	/^	float	distance;$/;"	m	struct:s_ray
-draw	srcs/cub3d.h	/^	int				draw;$/;"	m	struct:s_sprit
+distance	srcs/cub3d.h	/^	float	distance;$/;"	m	struct:s_sprit
 endian	srcs/cub3d.h	/^	int		endian;$/;"	m	struct:s_images
 endian	srcs/cub3d.h	/^	int		endian;$/;"	m	struct:s_texture
 file	srcs/cub3d.h	/^	char	*file;$/;"	m	struct:s_texture
@@ -90,6 +89,7 @@ ft_from_newline	libft/get_next_line_utils.c	/^char	*ft_from_newline(char *string
 ft_init_data	srcs/ft_init_data.c	/^void	ft_init_data(void)$/;"	f
 ft_init_p_view	srcs/ft_init_p_view.c	/^void	ft_init_p_view(void)$/;"	f
 ft_is_all_line_one	srcs/ft_is_all_line_one.c	/^int	ft_is_all_line_one(char *line)$/;"	f
+ft_is_sprit_visible	srcs/ft_is_sprit_visible.c	/^void	ft_is_sprit_visible()$/;"	f
 ft_isalnum	libft/ft_isalnum.c	/^int	ft_isalnum(int c)$/;"	f
 ft_isalpha	libft/ft_isalpha.c	/^int		ft_isalpha(int c)$/;"	f
 ft_isascii	libft/ft_isascii.c	/^int	ft_isascii(int c)$/;"	f
@@ -133,6 +133,7 @@ ft_strrchr	libft/ft_strrchr.c	/^char	*ft_strrchr(const char *pointer_to_string, 
 ft_strtrim	libft/ft_strtrim.c	/^char			*ft_strtrim(char const *string, char const *set)$/;"	f
 ft_sub	libft/get_next_line_utils.c	/^char	*ft_sub(char *string)$/;"	f
 ft_substr	libft/ft_substr.c	/^char	*ft_substr(char const *string, unsigned int start, size_t lenth)$/;"	f
+ft_swap_sprit_conts	srcs/ft_swap_sprit_conts.c	/^void	ft_swap_sprit_conts(t_sprit *one, t_sprit *two)$/;"	f
 ft_sys_error	srcs/ft_sys_error.c	/^int	ft_sys_error(char *str)$/;"	f
 ft_take_map	srcs/ft_take_map.c	/^int	ft_take_map(char *filename, int map)$/;"	f
 ft_tan	srcs/ft_tan.c	/^float	ft_tan(float l_angle)$/;"	f
@@ -203,6 +204,7 @@ thefreefunction	libft/ft_split.c	/^static void		thefreefunction(char **ptr, int 
 thefunlen	libft/ft_itoa.c	/^static int	thefunlen(unsigned int copy)$/;"	f	file:
 turn	srcs/cub3d.h	/^	int		turn;$/;"	m	struct:s_player
 vimmercopy	libft/ft_memmove.c	/^static void	*vimmercopy(void *distination2, const void *source2, size_t len)$/;"	f	file:
+visible	srcs/cub3d.h	/^	int		visible;$/;"	m	struct:s_sprit
 walk	srcs/cub3d.h	/^	int		walk;$/;"	m	struct:s_player
 wall_content	srcs/cub3d.h	/^	int		wall_content;$/;"	m	struct:s_ray
 wall_hitx	srcs/cub3d.h	/^	float	wall_hitx;$/;"	m	struct:s_ray
@@ -212,7 +214,7 @@ width	srcs/cub3d.h	/^	int		width;$/;"	m	struct:s_texture
 win_height	srcs/read_file.h	/^	int		win_height;$/;"	m	struct:s_data
 win_ptr	srcs/read_file.h	/^	void	*win_ptr;$/;"	m	struct:s_data
 win_width	srcs/read_file.h	/^	int		win_width;$/;"	m	struct:s_data
-x	srcs/cub3d.h	/^	float			x;$/;"	m	struct:s_sprit
 x	srcs/cub3d.h	/^	float	x;$/;"	m	struct:s_player
-y	srcs/cub3d.h	/^	float			y;$/;"	m	struct:s_sprit
+x	srcs/cub3d.h	/^	float	x;$/;"	m	struct:s_sprit
 y	srcs/cub3d.h	/^	float	y;$/;"	m	struct:s_player
+y	srcs/cub3d.h	/^	float	y;$/;"	m	struct:s_sprit
