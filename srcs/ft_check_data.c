@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/28 12:02:05 by ynoam             #+#    #+#             */
-/*   Updated: 2020/10/25 17:43:56 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/10/31 14:12:56 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ void	ft_check_data(void)
 		ft_putstr_fd("cub3d: error: Where is the player.\n", 2);
 		exit(EXIT_FAILURE);
 	}
-	/*
 	else
 		ft_check_map();
-	*/
 }

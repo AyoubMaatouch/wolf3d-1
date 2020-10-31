@@ -46,7 +46,7 @@ void	cast_ray(t_rays *ray)
 		float	x_check = nxt_hor_x;
 		float	y_check = nxt_hor_y + (ray->is_rayfacing_up ? -1 : 0);
 
-		if (has_wall_at(x_check, y_check))
+		if (has_wall_at(x_check, y_check) == 1)
 		{
 			hor_wall_x = nxt_hor_x;
 			hor_wall_y = nxt_hor_y;
@@ -91,7 +91,7 @@ void	cast_ray(t_rays *ray)
 		float	x_check = nxt_ver_x + (ray->is_rayfacing_left ? -1 : 0);
 		float	y_check = nxt_ver_y;
 
-		if (has_wall_at(x_check, y_check))
+		if (has_wall_at(x_check, y_check) == 1)
 		{
 			ver_wall_x = nxt_ver_x;
 			ver_wall_y = nxt_ver_y;
