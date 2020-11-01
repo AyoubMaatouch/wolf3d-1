@@ -6,7 +6,7 @@
 #    By: ynoam </var/mail/ynoam>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/24 22:45:25 by ynoam             #+#    #+#              #
-#    Updated: 2020/10/30 20:26:00 by ynoam            ###   ########.fr        #
+#    Updated: 2020/11/01 18:37:30 by ynoam            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = cub3d
 
 SRC = srcs/*.c
 
-DEBUG = -g -fsanitize=address
+#DEBUG = -g -fsanitize=address
 
 CC = gcc -Werror -Wall -Wextra
 

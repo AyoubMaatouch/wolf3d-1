@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 19:55:36 by ynoam             #+#    #+#             */
-/*   Updated: 2020/10/31 18:59:17 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/01 19:04:24 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,22 @@ void	ft_is_sprit_visible()
 		sprit_angle = atan2(dy, dx) * (180 / M_PI) - g_player.direction;
 
 		// normalize sprite angle.
-		while (sprit_angle < 0.0)
+		while (sprit_angle - g_player.direction < -180.0)
 			sprit_angle += 360.0;
-		while (sprit_angle > 360.0)
+		while (sprit_angle - g_player.direction > 180.0)
 			sprit_angle -= 360.0;
 
 		printf("%f\n", sprit_angle);
 		printf("------------------------\n");
+		int size;
+		if (g_data.win_height > g_data.win_width)
+			size = (g_data.win_height / ft_distance(dx, dy)) * TILE_SIZE;
+		else
+			size = (g_data.win_width / ft_distance(dx, dy)) * TILE_SIZE;
+
+		int y = g_data.win_height / 2 - size / 2;
+
+		int x = (sprit_angle - g_player.direction) * g_data.win_width / (60 * M_PI / 180) + ( g_data.win_width / 2 - size / 2);
 
 		sprit_ptr = sprit_ptr->next;
 	}

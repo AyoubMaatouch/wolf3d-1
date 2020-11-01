@@ -6,7 +6,7 @@
 /*   By: yousseff <ynoam@student.1337.ma>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/16 18:25:28 by yousseff          #+#    #+#             */
-/*   Updated: 2020/10/23 17:51:06 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/01 18:05:26 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ struct		s_data
 	int		map_width;
 	int		win_height;
 	int		win_width;
+	int		max_reso_x;
+	int		max_reso_y;
 	void	*mlx_ptr;
 	void	*win_ptr;
 	float	mini_scal;

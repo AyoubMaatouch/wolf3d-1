@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 14:30:29 by ynoam             #+#    #+#             */
-/*   Updated: 2020/10/22 12:04:55 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/01 18:39:37 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	read_file(const char *str)
 	{
 		if (ft_isdata_begin(line))
 		{
-			selection((str2 = ft_strtrim(line, " \t")));
+			selection((str2 = ft_strtrim(line, " ")));
 			ft_free(&line);
 		}
 		else if (ft_ismap_begin(line))

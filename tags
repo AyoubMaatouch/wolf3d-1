@@ -72,6 +72,7 @@ ft_atoi	libft/ft_atoi.c	/^int	ft_atoi(const char *str)$/;"	f
 ft_bzero	libft/ft_bzero.c	/^void	ft_bzero(void *string, size_t n)$/;"	f
 ft_calloc	libft/ft_calloc.c	/^void	*ft_calloc(size_t count, size_t size)$/;"	f
 ft_check_data	srcs/ft_check_data.c	/^void	ft_check_data(void)$/;"	f
+ft_check_map	srcs/ft_check_map.c	/^void	ft_check_map(void)$/;"	f
 ft_check_map_line	srcs/ft_check_map_line.c	/^int	ft_check_map_line(char *str, int position)$/;"	f
 ft_check_texture	srcs/ft_check_texture.c	/^void	ft_check_texture(void)$/;"	f
 ft_check_texture_files	srcs/ft_check_texture_files.c	/^void	ft_check_texture_files(void)$/;"	f

@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 14:26:58 by ynoam             #+#    #+#             */
-/*   Updated: 2020/10/31 14:30:33 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/01 18:00:32 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -219,5 +219,5 @@ void	my_mlx_pixel_put(t_images *data, int x, int y, int color);
 void	ft_swap_sprit_conts(t_sprit *one, t_sprit *two);
 void	ft_is_sprit_visible();
 void	ft_check_map();
-
+int		mlx_get_screen_size(void *mlx_ptr, int *sizex, int *sizey);
 #endif
