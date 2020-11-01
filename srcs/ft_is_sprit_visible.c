@@ -6,11 +6,35 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 19:55:36 by ynoam             #+#    #+#             */
-/*   Updated: 2020/11/01 19:04:24 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/01 20:57:05 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
+
+void	render_sp(int x, int y, int size, t_sprit *ptr)
+{
+	int col;
+	int i;
+	int j;
+
+	i = -1;
+	while (++i < size)
+	{
+		if (x + i < 0 || x + i >= g_resol.x)
+			continue;
+		if (ptr->dist >= g_raydist[x + i])
+			continue;
+		j = -1;
+		while (++j < size)
+		{
+			col = g_txtr_w.addr[j * size + i];
+			if (col != 0)
+				if (((x + i) >= 0 && (x + i) < g_data.win_width) && ((y + j) >= 0 && (y + j) < g_data.win_height))
+					mpp(&g_data, x + i, y + j, col);
+		}
+	}
+}
 
 void	ft_is_sprit_visible()
 {
@@ -26,6 +50,10 @@ void	ft_is_sprit_visible()
 	{
 		dy = (sprit_ptr->y * TILE_SIZE) - g_player.y;
 		dx = (sprit_ptr->x * TILE_SIZE) - g_player.x;
+		sprit_ptr->distance = ft_distance(sprit_ptr->x, sprit_ptr->y);
+
+
+
 
 		// normalize player view.
 		while (g_player.direction < 0.0)
@@ -41,17 +69,18 @@ void	ft_is_sprit_visible()
 		while (sprit_angle - g_player.direction > 180.0)
 			sprit_angle -= 360.0;
 
-		printf("%f\n", sprit_angle);
-		printf("------------------------\n");
+
 		int size;
 		if (g_data.win_height > g_data.win_width)
-			size = (g_data.win_height / ft_distance(dx, dy)) * TILE_SIZE;
+			size = (g_data.win_height / sprit_ptr->distance) * TILE_SIZE;
 		else
-			size = (g_data.win_width / ft_distance(dx, dy)) * TILE_SIZE;
+			size = (g_data.win_width / sprit_ptr->distance) * TILE_SIZE;
 
 		int y = g_data.win_height / 2 - size / 2;
 
 		int x = (sprit_angle - g_player.direction) * g_data.win_width / (60 * M_PI / 180) + ( g_data.win_width / 2 - size / 2);
+
+		render_sp(x, y, size, sprit_ptr);
 
 		sprit_ptr = sprit_ptr->next;
 	}
