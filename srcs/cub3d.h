@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 14:26:58 by ynoam             #+#    #+#             */
-/*   Updated: 2020/11/02 12:40:04 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/02 19:58:20 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,14 @@
 # define GREEN 0x32CD32
 # define AQUA 0x00ffff
 # define BROWN 0xCD853F
+# define ORAN 16744448
+# define MORAN 666633333
+# define NORTHCOL 16754448
+# define EASTCOL 36754448
+# define SOUTHCOL 56754448
+# define WESTCOL 76754448
+# define CEILCOLOR 204000000
+# define FLOORCOLOR 502142110
 
 /*
 ** My data type.

@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 19:55:36 by ynoam             #+#    #+#             */
-/*   Updated: 2020/11/02 14:14:59 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/02 18:40:08 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,25 @@ void	render_sp(int x, int y, int size, t_sprit *ptr, t_images *img, t_rays ray[]
 	int i;
 	int j;
 
-	i = -1;
-	while (++i < size)
+	i = 0;
+	while (i < size)
 	{
 
 		if (x + i < 0 || x + i >= g_data.win_width)
 			continue;
 		if (ptr->distance >= ray[x + i].distance)
 			continue;
-		j = -1;
-		while (++j < size)
+		j = 0;
+		while (j < size)
 		{
 			color = g_txtr_sprit.addr[j * size + i];
 			if (color != 0)
-				if (((x + i) >= 0 && (x + i) < g_data.win_width) && ((y + j) >= 0 && (y + j) < g_data.win_height))
+				if (((x + i) >= 0 && (x + i) < g_data.win_width)
+						&& ((y + j) >= 0 && (y + j) < g_data.win_height))
 					my_mlx_pixel_put(img, x+i, y+j, color);
+			j++;
 		}
+		i++;
 	}
 }
 
@@ -48,8 +51,8 @@ void	ft_is_sprit_visible(t_images *img, t_rays ray[])
 	sprit_ptr = g_sprits_ptr;
 	while (sprit_ptr != NULL)
 	{
-		dy = (sprit_ptr->y * TILE_SIZE) - g_player.y;
-		dx = (sprit_ptr->x * TILE_SIZE) - g_player.x;
+		dy = (sprit_ptr->y * TILE_SIZE + TILE_SIZE / 2) - g_player.y;
+		dx = (sprit_ptr->x * TILE_SIZE + TILE_SIZE / 2) - g_player.x;
 		sprit_ptr->distance = ft_distance(sprit_ptr->x * TILE_SIZE, sprit_ptr->y * TILE_SIZE);
 
 
@@ -72,9 +75,9 @@ void	ft_is_sprit_visible(t_images *img, t_rays ray[])
 
 		int size;
 		if (g_data.win_height > g_data.win_width)
-			size = (g_data.win_height / sprit_ptr->distance) * TILE_SIZE;
+			size = (g_data.win_height / sprit_ptr->distance) * g_txtr_sprit.height;
 		else
-			size = (g_data.win_width / sprit_ptr->distance) * TILE_SIZE;
+			size = (g_data.win_width / sprit_ptr->distance) * g_txtr_sprit.width;
 
 		int y = g_data.win_height / 2 - size / 2;
 
