@@ -6,7 +6,7 @@
 /*   By: yousseff <ynoam@student.1337.ma>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/16 18:25:28 by yousseff          #+#    #+#             */
-/*   Updated: 2020/11/01 18:05:26 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/02 14:22:00 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ struct		s_data
 */
 
 char		*get_texture(char *strim);
-int			ft_file_extention(const char *filename);
+int			ft_file_extention(const char *filename, char *str);
 int			ft_check_map_line(char *str, int position);
 void		ft_check_texture_files(void);
 int			ft_my_errors(char *str);

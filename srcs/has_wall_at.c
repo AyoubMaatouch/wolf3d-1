@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/12 17:34:59 by ynoam             #+#    #+#             */
-/*   Updated: 2020/10/31 16:44:01 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/02 13:48:55 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	has_wall_at(float x, float y)
 	if (g_data.map_ptr[int_y][int_x] == '1')
 		return (1);
 	else if (g_data.map_ptr[int_y][int_x] == '2')
-		return (1);
+		return (2);
 	else if (g_data.map_ptr[int_y][int_x] == ' ')
 		return (1);
 	return (0);

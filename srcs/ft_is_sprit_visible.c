@@ -6,42 +6,42 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 19:55:36 by ynoam             #+#    #+#             */
-/*   Updated: 2020/11/01 20:57:05 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/02 14:14:59 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	render_sp(int x, int y, int size, t_sprit *ptr)
+void	render_sp(int x, int y, int size, t_sprit *ptr, t_images *img, t_rays ray[])
 {
-	int col;
+	int color;
 	int i;
 	int j;
 
 	i = -1;
 	while (++i < size)
 	{
-		if (x + i < 0 || x + i >= g_resol.x)
+
+		if (x + i < 0 || x + i >= g_data.win_width)
 			continue;
-		if (ptr->dist >= g_raydist[x + i])
+		if (ptr->distance >= ray[x + i].distance)
 			continue;
 		j = -1;
 		while (++j < size)
 		{
-			col = g_txtr_w.addr[j * size + i];
-			if (col != 0)
+			color = g_txtr_sprit.addr[j * size + i];
+			if (color != 0)
 				if (((x + i) >= 0 && (x + i) < g_data.win_width) && ((y + j) >= 0 && (y + j) < g_data.win_height))
-					mpp(&g_data, x + i, y + j, col);
+					my_mlx_pixel_put(img, x+i, y+j, color);
 		}
 	}
 }
 
-void	ft_is_sprit_visible()
+void	ft_is_sprit_visible(t_images *img, t_rays ray[])
 {
 	float	sprit_angle;
 	float	dy;
 	float	dx;
-//	float	distance;
 	t_sprit	*sprit_ptr;
 
 
@@ -50,7 +50,7 @@ void	ft_is_sprit_visible()
 	{
 		dy = (sprit_ptr->y * TILE_SIZE) - g_player.y;
 		dx = (sprit_ptr->x * TILE_SIZE) - g_player.x;
-		sprit_ptr->distance = ft_distance(sprit_ptr->x, sprit_ptr->y);
+		sprit_ptr->distance = ft_distance(sprit_ptr->x * TILE_SIZE, sprit_ptr->y * TILE_SIZE);
 
 
 
@@ -61,7 +61,7 @@ void	ft_is_sprit_visible()
 		while (g_player.direction > 360.0)
 			g_player.direction -= 360.0;
 
-		sprit_angle = atan2(dy, dx) * (180 / M_PI) - g_player.direction;
+		sprit_angle = atan2(dy, dx) * (180 / M_PI);
 
 		// normalize sprite angle.
 		while (sprit_angle - g_player.direction < -180.0)
@@ -78,9 +78,9 @@ void	ft_is_sprit_visible()
 
 		int y = g_data.win_height / 2 - size / 2;
 
-		int x = (sprit_angle - g_player.direction) * g_data.win_width / (60 * M_PI / 180) + ( g_data.win_width / 2 - size / 2);
+		int x = (sprit_angle - g_player.direction) * g_data.win_width / 60 + ( g_data.win_width / 2 - size / 2);
 
-		render_sp(x, y, size, sprit_ptr);
+		render_sp(x, y, size, sprit_ptr,img,ray);
 
 		sprit_ptr = sprit_ptr->next;
 	}
