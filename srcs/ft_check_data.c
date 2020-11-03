@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/28 12:02:05 by ynoam             #+#    #+#             */
-/*   Updated: 2020/10/31 14:12:56 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/03 18:52:06 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_check_data(void)
 			|| g_data.floor == -1 || g_data.ceill == -1)
 		ft_file_error();
 	else if (g_data.map_height < 3 || g_data.map_width < 3)
-		ft_map_error();
+		ft_map_error("The map is too small.");
 	else if (g_data.player_view != 'N' && g_data.player_view != 'W'
 			&& g_data.player_view != 'E' && g_data.player_view != 'S')
 	{
