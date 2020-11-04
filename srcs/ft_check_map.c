@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 14:13:08 by ynoam             #+#    #+#             */
-/*   Updated: 2020/11/03 18:54:47 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/04 12:47:37 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,21 @@ void	ft_check_first_last_line(void)
 		j++;
 	}
 }
+
+int	ft_check_space(size_t j, char *str)
+{
+	size_t	k;
+
+	k = ft_strlen(str);
+	if (j < 1 || k < j || str[j] == ' ' || str[j] == 0)
+		return (1);
+	return (0);
+}
 void	ft_check_map(void)
 {
 	size_t	i;
 	size_t	j;
 	size_t	k;
-	size_t	a;
-	size_t	b;
 
 	ft_check_first_last_line();
 	i = 0;
@@ -51,18 +59,16 @@ void	ft_check_map(void)
 		if (g_data.map_ptr[i++][0] == 0)
 			ft_map_error("There is one or more empty lines in the map.");
 	i = 1;
-	j = 0;
 	while (i < (size_t)g_data.map_height - 2)
 	{
+		j = 0;
 		k = ft_strlen(g_data.map_ptr[i]);
-		a = ft_strlen(g_data.map_ptr[i + 1]);
-		b = ft_strlen(g_data.map_ptr[i - 1]);
-	//	while (j < k)
-	//	{
-	//		if (g_data.map_ptr[i][j] == '0' && ((j <= b && (g_data.map_ptr[i + 1][j] == 0 || g_data.map_ptr[i - 1][j] == 0 || g_data.map_ptr[i + 1][j] == ' ' || g_data.map_ptr[i - 1][j] == ' ')) || (g_data.map_ptr[i][j + 1] == ' ' || g_data.map_ptr[i][j - 1] == ' ' || g_data.map_ptr[i][j + 1] == 0)))
-	//			ft_map_error("You have a 0,2 or a player out side the map.");
+		while (j < k)
+		{
+			if (g_data.map_ptr[i][j] == '0' && (ft_check_space(j+1, g_data.map_ptr[i]) || ft_check_space(j-1, g_data.map_ptr[i]) || ft_check_space(j, g_data.map_ptr[i+1]) || ft_check_space(j, g_data.map_ptr[i-1])))
+				ft_map_error("You have a 0,2 or a player out side the map.");
 			j++;
-		//}
+		}
 		i++;
 	}
 }
