@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 14:13:08 by ynoam             #+#    #+#             */
-/*   Updated: 2020/11/04 12:47:37 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/04 14:56:10 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	ft_check_space(size_t j, char *str)
 	size_t	k;
 
 	k = ft_strlen(str);
-	if (j < 1 || k < j || str[j] == ' ' || str[j] == 0)
+	if (j < 0 || k < j || str[j] == ' ' || str[j] == 0)
 		return (1);
 	return (0);
 }
@@ -57,7 +57,7 @@ void	ft_check_map(void)
 	i = 0;
 	while (i < (size_t)g_data.map_height - 1)
 		if (g_data.map_ptr[i++][0] == 0)
-			ft_map_error("There is one or more empty lines in the map.");
+			ft_map_error("There is one or more empty lines in the map.\n");
 	i = 1;
 	while (i < (size_t)g_data.map_height - 2)
 	{
@@ -66,7 +66,7 @@ void	ft_check_map(void)
 		while (j < k)
 		{
 			if (g_data.map_ptr[i][j] == '0' && (ft_check_space(j+1, g_data.map_ptr[i]) || ft_check_space(j-1, g_data.map_ptr[i]) || ft_check_space(j, g_data.map_ptr[i+1]) || ft_check_space(j, g_data.map_ptr[i-1])))
-				ft_map_error("You have a 0,2 or a player out side the map.");
+				ft_map_error("You have a 0,2 or a player out side the map.\n");
 			j++;
 		}
 		i++;
