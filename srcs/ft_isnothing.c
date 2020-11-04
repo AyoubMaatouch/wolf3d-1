@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/05 11:57:51 by ynoam             #+#    #+#             */
-/*   Updated: 2020/05/08 14:25:55 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/04 18:34:22 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,8 @@
 
 void	ft_isnothing(char *line)
 {
-	int i;
-
-	i = 0;
-	while (line[i] == ' ' || line[i] == '\t')
-		i++;
-	if (line[i] == '\0')
+	if (line[0] == '\0')
 		ft_free(&line);
 	else
-		ft_file_error();
+		ft_file_error("You have non empty line in the data part.\n");
 }

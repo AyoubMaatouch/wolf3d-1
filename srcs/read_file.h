@@ -6,7 +6,7 @@
 /*   By: yousseff <ynoam@student.1337.ma>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/16 18:25:28 by yousseff          #+#    #+#             */
-/*   Updated: 2020/11/03 18:51:02 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/04 16:29:18 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int			ft_file_extention(const char *filename, char *str);
 int			ft_check_map_line(char *str, int position);
 void		ft_check_texture_files(void);
 int			ft_my_errors(char *str);
-int			ft_file_error(void);
+int			ft_file_error(char *str);
 int			ft_is_all_line_one(char *line);
 int			ft_isdata_begin(char *line);
 int			ft_ismap_begin(char *line);

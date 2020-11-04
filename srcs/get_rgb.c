@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 18:56:28 by ynoam             #+#    #+#             */
-/*   Updated: 2020/03/16 18:24:45 by yousseff         ###   ########.fr       */
+/*   Updated: 2020/11/04 17:44:13 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,26 @@
 int	get_rgb(char *str)
 {
 	char	**rgb;
+	char	**rgb2;
 	int		i;
 	int		j;
 
 	rgb = ft_split(str, ',');
-	j = ft_atoi(rgb[0]);
+	rgb2 = ft_split(rgb[0], ' ');
+	j = ft_atoi(rgb2[1]);
 	if (j < 0 || j > 255)
-		return (0);
+		ft_file_error("rgb value illegal.\n");
 	i = j << 16;
 	j = ft_atoi(rgb[1]);
 	if (j < 0 || j > 255)
-		return (0);
+		ft_file_error("rgb value illegal.\n");
 	i |= j << 8;
 	j = ft_atoi(rgb[2]);
 	if (j < 0 || j > 255)
-		return (0);
+		ft_file_error("rgb value illegal.\n");
 	i |= j;
+	ft_free_double_ptr(&rgb2);
+	free(rgb2);
 	ft_free_double_ptr(&rgb);
 	free(rgb);
 	return (i);

@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 15:31:44 by ynoam             #+#    #+#             */
-/*   Updated: 2020/10/22 12:07:53 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/04 16:26:29 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,11 @@
 ** print the error and exit the programme;
 */
 
-int	ft_file_error(void)
+int	ft_file_error(char *str)
 {
-	ft_putstr_fd("Error\ncub3d: your file syntax is incorrect.\n", 2);
+	ft_putstr_fd("Error\n", 2);
+	ft_putstr_fd("cub3d: ", 2);
+	ft_putstr_fd(str, 2);
 	exit(EXIT_FAILURE);
 	return (1);
 }
