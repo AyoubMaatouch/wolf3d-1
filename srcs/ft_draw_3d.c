@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/09 19:04:06 by ynoam             #+#    #+#             */
-/*   Updated: 2020/10/26 20:32:47 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/04 18:57:09 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,17 @@
 
 void	ft_draw_3d(t_images *img, t_rays ray[])
 {
-	int		i;
-	float	pro_wall_height;
-	float	per_distance;
-	float	proj_distance;
-	int		wall_strip_height;
-	int		wall_top_pixel;
-	int		wall_bottom_pixel;
-	int		y;
-	unsigned int		color;
+	int				i;
+	float			pro_wall_height;
+	float			per_distance;
+	float			proj_distance;
+	int				wall_strip_height;
+	int				wall_top_pixel;
+	int				wall_bottom_pixel;
+	int				y;
+	unsigned int	color;
 
 	i = 0;
-
 	while (i < g_data.win_width)
 	{
 		if ((per_distance = ray[i].distance * ft_cos(ray[i].ray_angle -

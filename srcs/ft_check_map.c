@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 14:13:08 by ynoam             #+#    #+#             */
-/*   Updated: 2020/11/04 18:40:09 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/04 18:49:15 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	ft_check_first_last_line(void)
 	}
 }
 
-int	ft_check_space(size_t j, char *str)
+int		ft_check_space(size_t j, char *str)
 {
 	size_t	k;
 
@@ -47,6 +47,7 @@ int	ft_check_space(size_t j, char *str)
 		return (1);
 	return (0);
 }
+
 void	ft_check_map(void)
 {
 	size_t	i;
@@ -73,7 +74,7 @@ void	ft_check_map(void)
 		{
 			if (g_data.map_ptr[i][j] == '0' && (ft_check_space(j+1, g_data.map_ptr[i]) || ft_check_space(j-1, g_data.map_ptr[i]) || ft_check_space(j, g_data.map_ptr[i+1]) || ft_check_space(j, g_data.map_ptr[i-1])))
 				ft_map_error("You have a 0,2 or a player out side the map.\n");
-			else  if (g_data.map_ptr[i][j] == '2' && (ft_check_space(j+1, g_data.map_ptr[i]) || ft_check_space(j-1, g_data.map_ptr[i]) || ft_check_space(j, g_data.map_ptr[i+1]) || ft_check_space(j, g_data.map_ptr[i-1])))
+			else  if ((g_data.map_ptr[i][j] == 'W' || g_data.map_ptr[i][j] == 'S' || g_data.map_ptr[i][j] == 'E' || g_data.map_ptr[i][j] == 'N' || g_data.map_ptr[i][j] == '2') && (ft_check_space(j+1, g_data.map_ptr[i]) || ft_check_space(j-1, g_data.map_ptr[i]) || ft_check_space(j, g_data.map_ptr[i+1]) || ft_check_space(j, g_data.map_ptr[i-1])))
 				ft_map_error("You have a 0,2 or a player out side the map.\n");
 			j++;
 		}

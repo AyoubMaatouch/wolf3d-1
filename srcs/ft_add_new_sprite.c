@@ -6,11 +6,11 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 18:03:03 by ynoam             #+#    #+#             */
-/*   Updated: 2020/10/27 18:01:30 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/04 18:50:14 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"cub3d.h"
+#include "cub3d.h"
 
 t_sprit		*ft_add_new_sprite(int y, int x)
 {

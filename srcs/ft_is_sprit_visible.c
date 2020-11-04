@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 19:55:36 by ynoam             #+#    #+#             */
-/*   Updated: 2020/11/02 18:40:08 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/04 20:32:29 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,25 +18,22 @@ void	render_sp(int x, int y, int size, t_sprit *ptr, t_images *img, t_rays ray[]
 	int i;
 	int j;
 
-	i = 0;
-	while (i < size)
+	i = -1;
+	while (++i < size)
 	{
-
 		if (x + i < 0 || x + i >= g_data.win_width)
 			continue;
 		if (ptr->distance >= ray[x + i].distance)
 			continue;
-		j = 0;
-		while (j < size)
+		j = -1;
+		while (++j < size)
 		{
 			color = g_txtr_sprit.addr[j * size + i];
 			if (color != 0)
 				if (((x + i) >= 0 && (x + i) < g_data.win_width)
 						&& ((y + j) >= 0 && (y + j) < g_data.win_height))
 					my_mlx_pixel_put(img, x+i, y+j, color);
-			j++;
 		}
-		i++;
 	}
 }
 

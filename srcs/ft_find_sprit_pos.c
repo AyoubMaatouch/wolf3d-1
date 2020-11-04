@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/24 20:24:10 by ynoam             #+#    #+#             */
-/*   Updated: 2020/10/27 18:56:24 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/04 18:55:23 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	ft_find_sprit_pos(void)
 	int		j;
 	t_sprit	*tmp;
 
-//	tmp = NULL;
 	i = 0;
 	while (i < g_data.map_height)
 	{

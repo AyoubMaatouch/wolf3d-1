@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 18:58:13 by ynoam             #+#    #+#             */
-/*   Updated: 2020/10/27 17:47:16 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/04 18:54:04 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ void	ft_clc_sprit_dis(void)
 	t_sprit	*tmp;
 
 	ptr = g_sprits_ptr;
-	while(ptr != NULL)
+	while (ptr != NULL)
 	{
 		ptr->distance = ft_distance(ptr->x * TILE_SIZE, ptr->y * TILE_SIZE);
 		ptr = ptr->next;
 	}
 	ptr = g_sprits_ptr;
-	while(ptr != NULL)
+	while (ptr != NULL)
 	{
 		tmp = ptr;
 		ptr = ptr->next;
