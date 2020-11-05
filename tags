@@ -9,8 +9,11 @@ BLUE	srcs/cub3d.h	/^# define BLUE /;"	d
 BROWN	srcs/cub3d.h	/^# define BROWN /;"	d
 BUFFER_SIZE	libft/get_next_line.h	/^# define BUFFER_SIZE /;"	d
 CC	libft/Makefile	/^CC = gcc -Wall -Wextra -Werror -c $(SRC) && ar rc $(NAME) *.o && ranlib $(NAME)$/;"	m
+CEILCOLOR	srcs/cub3d.h	/^# define CEILCOLOR /;"	d
 CUB3D_H	srcs/cub3d.h	/^# define CUB3D_H$/;"	d
+EASTCOL	srcs/cub3d.h	/^# define EASTCOL /;"	d
 FALSE	srcs/cub3d.h	/^# define FALSE	/;"	d
+FLOORCOLOR	srcs/cub3d.h	/^# define FLOORCOLOR /;"	d
 FOV_ANGLE	srcs/cub3d.h	/^# define FOV_ANGLE	/;"	d
 GET_NEXT_LINE_H	libft/get_next_line.h	/^# define GET_NEXT_LINE_H$/;"	d
 GOLD	srcs/cub3d.h	/^# define GOLD /;"	d
@@ -39,15 +42,20 @@ MAC_LEFT_ARROW	srcs/cub3d.h	/^# define MAC_LEFT_ARROW	/;"	d
 MAC_RIGHT_ARROW	srcs/cub3d.h	/^# define MAC_RIGHT_ARROW	/;"	d
 MAC_UP_ARROW	srcs/cub3d.h	/^# define MAC_UP_ARROW	/;"	d
 MINIMAP_SCALE	srcs/cub3d.h	/^# define MINIMAP_SCALE	/;"	d
+MORAN	srcs/cub3d.h	/^# define MORAN /;"	d
 NAME	libft/Makefile	/^NAME = libft.a$/;"	m
+NORTHCOL	srcs/cub3d.h	/^# define NORTHCOL /;"	d
+ORAN	srcs/cub3d.h	/^# define ORAN /;"	d
 ORANGE	srcs/cub3d.h	/^# define ORANGE	/;"	d
 READ_FILE_H	srcs/read_file.h	/^# define READ_FILE_H$/;"	d
 RED	srcs/cub3d.h	/^# define RED /;"	d
 SKY	srcs/cub3d.h	/^# define SKY /;"	d
+SOUTHCOL	srcs/cub3d.h	/^# define SOUTHCOL /;"	d
 SRC	libft/Makefile	/^SRC = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c\\$/;"	m
 TILE_SIZE	srcs/cub3d.h	/^# define TILE_SIZE	/;"	d
 TRUE	srcs/cub3d.h	/^# define TRUE	/;"	d
 VIOLET	srcs/cub3d.h	/^# define VIOLET	/;"	d
+WESTCOL	srcs/cub3d.h	/^# define WESTCOL /;"	d
 WHITE	srcs/cub3d.h	/^# define WHITE /;"	d
 YELLOW	srcs/cub3d.h	/^# define YELLOW	/;"	d
 addr	srcs/cub3d.h	/^	char	*addr;$/;"	m	struct:s_images
@@ -72,8 +80,10 @@ ft_atoi	libft/ft_atoi.c	/^int	ft_atoi(const char *str)$/;"	f
 ft_bzero	libft/ft_bzero.c	/^void	ft_bzero(void *string, size_t n)$/;"	f
 ft_calloc	libft/ft_calloc.c	/^void	*ft_calloc(size_t count, size_t size)$/;"	f
 ft_check_data	srcs/ft_check_data.c	/^void	ft_check_data(void)$/;"	f
+ft_check_first_last_line	srcs/ft_check_map.c	/^void	ft_check_first_last_line(void)$/;"	f
 ft_check_map	srcs/ft_check_map.c	/^void	ft_check_map(void)$/;"	f
 ft_check_map_line	srcs/ft_check_map_line.c	/^int	ft_check_map_line(char *str, int position)$/;"	f
+ft_check_space	srcs/ft_check_map.c	/^int		ft_check_space(size_t j, char *str)$/;"	f
 ft_check_texture	srcs/ft_check_texture.c	/^void	ft_check_texture(void)$/;"	f
 ft_check_texture_files	srcs/ft_check_texture_files.c	/^void	ft_check_texture_files(void)$/;"	f
 ft_clc_sprit_dis	srcs/ft_clc_sprit_dis.c	/^void	ft_clc_sprit_dis(void)$/;"	f
@@ -81,8 +91,8 @@ ft_cos	srcs/ft_cos.c	/^double	ft_cos(double angle)$/;"	f
 ft_distance	srcs/ft_distance.c	/^float	ft_distance(float x, float y)$/;"	f
 ft_draw	srcs/ft_draw.c	/^void	ft_draw(void)$/;"	f
 ft_draw_3d	srcs/ft_draw_3d.c	/^void	ft_draw_3d(t_images *img, t_rays ray[])$/;"	f
-ft_file_error	srcs/ft_file_error.c	/^int	ft_file_error(void)$/;"	f
-ft_file_extention	srcs/ft_file_extention.c	/^int	ft_file_extention(const char *filename)$/;"	f
+ft_file_error	srcs/ft_file_error.c	/^int	ft_file_error(char *str)$/;"	f
+ft_file_extention	srcs/ft_file_extention.c	/^int	ft_file_extention(const char *filename, char *str)$/;"	f
 ft_find_sprit_pos	srcs/ft_find_sprit_pos.c	/^void	ft_find_sprit_pos(void)$/;"	f
 ft_free	libft/get_next_line.c	/^int	ft_free(char **ptr)$/;"	f
 ft_free_double_ptr	libft/ft_free_double_ptr.c	/^void	ft_free_double_ptr(char ***str)$/;"	f
@@ -90,7 +100,7 @@ ft_from_newline	libft/get_next_line_utils.c	/^char	*ft_from_newline(char *string
 ft_init_data	srcs/ft_init_data.c	/^void	ft_init_data(void)$/;"	f
 ft_init_p_view	srcs/ft_init_p_view.c	/^void	ft_init_p_view(void)$/;"	f
 ft_is_all_line_one	srcs/ft_is_all_line_one.c	/^int	ft_is_all_line_one(char *line)$/;"	f
-ft_is_sprit_visible	srcs/ft_is_sprit_visible.c	/^void	ft_is_sprit_visible()$/;"	f
+ft_is_sprit_visible	srcs/ft_is_sprit_visible.c	/^void	ft_is_sprit_visible(t_images *img, t_rays ray[])$/;"	f
 ft_isalnum	libft/ft_isalnum.c	/^int	ft_isalnum(int c)$/;"	f
 ft_isalpha	libft/ft_isalpha.c	/^int		ft_isalpha(int c)$/;"	f
 ft_isascii	libft/ft_isascii.c	/^int	ft_isascii(int c)$/;"	f
@@ -102,7 +112,7 @@ ft_isprint	libft/ft_isprint.c	/^int	ft_isprint(int c)$/;"	f
 ft_itoa	libft/ft_itoa.c	/^char		*ft_itoa(int n)$/;"	f
 ft_join	libft/get_next_line_utils.c	/^char	*ft_join(char *string1, char *string2)$/;"	f
 ft_loop	srcs/ft_loop.c	/^int	ft_loop(int l_key)$/;"	f
-ft_map_error	srcs/ft_map_error.c	/^int	ft_map_error(void)$/;"	f
+ft_map_error	srcs/ft_map_error.c	/^int	ft_map_error(char *str)$/;"	f
 ft_memccpy	libft/ft_memccpy.c	/^void	*ft_memccpy(void *distination, const void *source, int c, size_t n)$/;"	f
 ft_memchr	libft/ft_memchr.c	/^void	*ft_memchr(const void *s, int c, size_t n)$/;"	f
 ft_memcmp	libft/ft_memcmp.c	/^int	ft_memcmp(const void *s1, const void *s2, size_t n)$/;"	f
@@ -152,7 +162,7 @@ g_txtr_n	srcs/cub3d.h	/^struct s_texture	g_txtr_n;$/;"	v	typeref:struct:s_textur
 g_txtr_s	srcs/cub3d.h	/^struct s_texture	g_txtr_s;$/;"	v	typeref:struct:s_texture
 g_txtr_sprit	srcs/cub3d.h	/^struct s_texture	g_txtr_sprit;$/;"	v	typeref:struct:s_texture
 g_txtr_w	srcs/cub3d.h	/^struct s_texture	g_txtr_w;$/;"	v	typeref:struct:s_texture
-get_color	srcs/get_color.c	/^int		get_color(char *strim)$/;"	f
+get_color	srcs/get_color.c	/^int		get_color(char *str)$/;"	f
 get_next_line	libft/get_next_line.c	/^int	get_next_line(int fd, char **line)$/;"	f
 get_resolution	srcs/get_resolution.c	/^void	get_resolution(char *strim)$/;"	f
 get_rgb	srcs/get_rgb.c	/^int	get_rgb(char *str)$/;"	f
@@ -173,6 +183,8 @@ main	srcs/main.c	/^int	main(int argc, char *argv[])$/;"	f
 map_height	srcs/read_file.h	/^	int		map_height;$/;"	m	struct:s_data
 map_ptr	srcs/read_file.h	/^	char	**map_ptr;$/;"	m	struct:s_data
 map_width	srcs/read_file.h	/^	int		map_width;$/;"	m	struct:s_data
+max_reso_x	srcs/read_file.h	/^	int		max_reso_x;$/;"	m	struct:s_data
+max_reso_y	srcs/read_file.h	/^	int		max_reso_y;$/;"	m	struct:s_data
 mini_scal	srcs/read_file.h	/^	float	mini_scal;$/;"	m	struct:s_data
 mlx_ptr	srcs/read_file.h	/^	void	*mlx_ptr;$/;"	m	struct:s_data
 mov_speed	srcs/cub3d.h	/^	float	mov_speed;$/;"	m	struct:s_player
@@ -184,6 +196,7 @@ radius	srcs/cub3d.h	/^	float	radius;$/;"	m	struct:s_player
 ray_angle	srcs/cub3d.h	/^	float	ray_angle;$/;"	m	struct:s_ray
 read_file	srcs/read_file.c	/^void	read_file(const char *str)$/;"	f
 read_map	srcs/read_map.c	/^void	read_map(int fd, int map, char *line, char *filename)$/;"	f
+render_sp	srcs/ft_is_sprit_visible.c	/^void	render_sp(int x, int y, int size, t_sprit *ptr, t_images *img, t_rays ray[])$/;"	f
 rotation	srcs/cub3d.h	/^	float	rotation;$/;"	m	struct:s_player
 s_data	srcs/read_file.h	/^struct		s_data$/;"	s
 s_images	srcs/cub3d.h	/^typedef	struct	s_images$/;"	s

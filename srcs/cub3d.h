@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 14:26:58 by ynoam             #+#    #+#             */
-/*   Updated: 2020/11/04 18:53:28 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/05 11:36:03 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -183,6 +183,7 @@ struct s_texture	g_txtr_w;
 struct s_texture	g_txtr_sprit;
 
 t_sprit	*g_sprits_ptr;
+
 /*
 ** My functions.
 */

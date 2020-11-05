@@ -6,13 +6,13 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 19:55:36 by ynoam             #+#    #+#             */
-/*   Updated: 2020/11/04 20:32:29 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/05 11:38:58 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	render_sp(int x, int y, int size, t_sprit *ptr, t_images *img, t_rays ray[])
+void	draw_sprite(int x, int y, int size, t_sprit *ptr, t_images *img, t_rays ray[])
 {
 	int color;
 	int i;
@@ -28,10 +28,9 @@ void	render_sp(int x, int y, int size, t_sprit *ptr, t_images *img, t_rays ray[]
 		j = -1;
 		while (++j < size)
 		{
-			color = g_txtr_sprit.addr[j * size + i];
+			color = g_txtr_sprit.addr[g_txtr_sprit.width * (y * g_txtr_sprit.height / size) + (x * g_txtr_sprit.width / size)];
 			if (color != 0)
-				if (((x + i) >= 0 && (x + i) < g_data.win_width)
-						&& ((y + j) >= 0 && (y + j) < g_data.win_height))
+				if (((x + i) >= 0 && (x + i) < g_data.win_width) && ((y + j) >= 0 && (y + j) < g_data.win_height))
 					my_mlx_pixel_put(img, x+i, y+j, color);
 		}
 	}
@@ -48,9 +47,9 @@ void	ft_is_sprit_visible(t_images *img, t_rays ray[])
 	sprit_ptr = g_sprits_ptr;
 	while (sprit_ptr != NULL)
 	{
-		dy = (sprit_ptr->y * TILE_SIZE + TILE_SIZE / 2) - g_player.y;
-		dx = (sprit_ptr->x * TILE_SIZE + TILE_SIZE / 2) - g_player.x;
-		sprit_ptr->distance = ft_distance(sprit_ptr->x * TILE_SIZE, sprit_ptr->y * TILE_SIZE);
+		dy = ((sprit_ptr->y) * TILE_SIZE - TILE_SIZE/2) - g_player.y;
+		dx = ((sprit_ptr->x) * TILE_SIZE - TILE_SIZE/2) - g_player.x;
+		sprit_ptr->distance = ft_distance(sprit_ptr->x * TILE_SIZE - TILE_SIZE/2, sprit_ptr->y * TILE_SIZE - TILE_SIZE/2);
 
 
 
@@ -64,23 +63,23 @@ void	ft_is_sprit_visible(t_images *img, t_rays ray[])
 		sprit_angle = atan2(dy, dx) * (180 / M_PI);
 
 		// normalize sprite angle.
-		while (sprit_angle - g_player.direction < -180.0)
-			sprit_angle += 360.0;
 		while (sprit_angle - g_player.direction > 180.0)
 			sprit_angle -= 360.0;
+		while (sprit_angle - g_player.direction < -180.0)
+			sprit_angle += 360.0;
 
 
-		int size;
+		float size;
 		if (g_data.win_height > g_data.win_width)
 			size = (g_data.win_height / sprit_ptr->distance) * g_txtr_sprit.height;
 		else
 			size = (g_data.win_width / sprit_ptr->distance) * g_txtr_sprit.width;
 
-		int y = g_data.win_height / 2 - size / 2;
+		float y = g_data.win_height / 2 - size / 2;
 
-		int x = (sprit_angle - g_player.direction) * g_data.win_width / 60 + ( g_data.win_width / 2 - size / 2);
+		float x = (sprit_angle - g_player.direction) * g_data.win_width / 60 + ( g_data.win_width / 2 - size / 2);
 
-		render_sp(x, y, size, sprit_ptr,img,ray);
+		draw_sprite(x, y, size, sprit_ptr,img,ray);
 
 		sprit_ptr = sprit_ptr->next;
 	}

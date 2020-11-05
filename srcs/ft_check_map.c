@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 14:13:08 by ynoam             #+#    #+#             */
-/*   Updated: 2020/11/04 18:49:15 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/05 12:08:08 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int		ft_check_space(size_t j, char *str)
 {
 	size_t	k;
 
-	k = ft_strlen(str);
+	k = ft_strlen(str) - 1;
 	if (j < 0 || k < j || str[j] == ' ' || str[j] == 0)
 		return (1);
 	return (0);
@@ -66,7 +66,7 @@ void	ft_check_map(void)
 		ft_free(&str);
 	}
 	i = 1;
-	while (i < (size_t)g_data.map_height - 2)
+	while (i < (size_t)g_data.map_height - 1)
 	{
 		j = 0;
 		k = ft_strlen(g_data.map_ptr[i]);

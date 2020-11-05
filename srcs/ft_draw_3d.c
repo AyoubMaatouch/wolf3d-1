@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/09 19:04:06 by ynoam             #+#    #+#             */
-/*   Updated: 2020/11/04 18:57:09 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/05 11:48:52 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	ft_draw_3d(t_images *img, t_rays ray[])
 		wall_bottom_pixel = (wall_bottom_pixel > g_data.win_height) ? g_data.win_height : wall_bottom_pixel;
 		y = 0;
 		while (y < wall_top_pixel && wall_top_pixel < g_data.win_width)
-			my_mlx_pixel_put(img, i, y++, SKY);
+			my_mlx_pixel_put(img, i, y++, g_data.ceill);
 
 		int texture_offset_x;
 		int texture_offset_y;
@@ -78,7 +78,7 @@ void	ft_draw_3d(t_images *img, t_rays ray[])
 		}
 		y = wall_bottom_pixel;
 		while (y < g_data.win_height)
-			my_mlx_pixel_put(img, i, y++, GREEN);
+			my_mlx_pixel_put(img, i, y++, g_data.floor);
 		i++;
 	}
 }
