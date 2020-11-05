@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/28 12:02:05 by ynoam             #+#    #+#             */
-/*   Updated: 2020/11/04 16:30:29 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/05 20:15:51 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void	ft_check_data(void)
 	else if (g_data.player_view != 'N' && g_data.player_view != 'W'
 			&& g_data.player_view != 'E' && g_data.player_view != 'S')
 		ft_map_error("Where is the player.\n");
+	else if (!g_txtr_e.file || !g_txtr_w.file || !g_txtr_s.file || !g_txtr_n.file || !g_txtr_sprit.file)
+		ft_file_error("the texture files wrong.\n");
 	else
 		ft_check_map();
 }
