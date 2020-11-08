@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 19:55:36 by ynoam             #+#    #+#             */
-/*   Updated: 2020/11/05 11:38:58 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/08 20:54:34 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,15 @@ void	draw_sprite(int x, int y, int size, t_sprit *ptr, t_images *img, t_rays ray
 		j = -1;
 		while (++j < size)
 		{
-			color = g_txtr_sprit.addr[g_txtr_sprit.width * (y * g_txtr_sprit.height / size) + (x * g_txtr_sprit.width / size)];
-			if (color != 0)
-				if (((x + i) >= 0 && (x + i) < g_data.win_width) && ((y + j) >= 0 && (y + j) < g_data.win_height))
-					my_mlx_pixel_put(img, x+i, y+j, color);
+			if (((x + i) >= 0 && (x + i) < g_data.win_width) && ((y + j) >= 0 && (y + j) < g_data.win_height))
+			{
+				if (j < 64 && i < 64)
+				{
+					color = g_txtr_sprit.addr[(j * g_txtr_sprit.height) + i];
+					if (color != 0)
+						my_mlx_pixel_put(img, x + i, y + j, color);
+				}
+			}
 		}
 	}
 }
@@ -41,15 +46,15 @@ void	ft_is_sprit_visible(t_images *img, t_rays ray[])
 	float	sprit_angle;
 	float	dy;
 	float	dx;
-	t_sprit	*sprit_ptr;
+	t_sprit	*sprit;
 
 
-	sprit_ptr = g_sprits_ptr;
-	while (sprit_ptr != NULL)
+	sprit = g_sprits_ptr;
+	while (sprit != NULL)
 	{
-		dy = ((sprit_ptr->y) * TILE_SIZE - TILE_SIZE/2) - g_player.y;
-		dx = ((sprit_ptr->x) * TILE_SIZE - TILE_SIZE/2) - g_player.x;
-		sprit_ptr->distance = ft_distance(sprit_ptr->x * TILE_SIZE - TILE_SIZE/2, sprit_ptr->y * TILE_SIZE - TILE_SIZE/2);
+		dy = ((sprit->y) * TILE_SIZE - TILE_SIZE/2) - g_player.y;
+		dx = ((sprit->x) * TILE_SIZE - TILE_SIZE/2) - g_player.x;
+		sprit->distance = ft_distance(sprit->x * TILE_SIZE - TILE_SIZE/2, sprit->y * TILE_SIZE - TILE_SIZE/2);
 
 
 
@@ -60,7 +65,7 @@ void	ft_is_sprit_visible(t_images *img, t_rays ray[])
 		while (g_player.direction > 360.0)
 			g_player.direction -= 360.0;
 
-		sprit_angle = atan2(dy, dx) * (180 / M_PI);
+		sprit_angle = atan2(dy, dx) * 180 / M_PI;
 
 		// normalize sprite angle.
 		while (sprit_angle - g_player.direction > 180.0)
@@ -68,20 +73,19 @@ void	ft_is_sprit_visible(t_images *img, t_rays ray[])
 		while (sprit_angle - g_player.direction < -180.0)
 			sprit_angle += 360.0;
 
-
-		float size;
+		float spritescal;
 		if (g_data.win_height > g_data.win_width)
-			size = (g_data.win_height / sprit_ptr->distance) * g_txtr_sprit.height;
+			spritescal = (g_data.win_height / sprit->distance) * g_txtr_sprit.height;
 		else
-			size = (g_data.win_width / sprit_ptr->distance) * g_txtr_sprit.width;
+			spritescal = (g_data.win_width / sprit->distance) * g_txtr_sprit.width;
 
-		float y = g_data.win_height / 2 - size / 2;
+		float spritescreenx = (sprit_angle - g_player.direction) * (g_data.win_width) / 60 + ( (g_data.win_width) / 2 - spritescal / 2);
 
-		float x = (sprit_angle - g_player.direction) * g_data.win_width / 60 + ( g_data.win_width / 2 - size / 2);
+		float spritescreeny = g_data.win_height / 2 - spritescal / 2;
 
-		draw_sprite(x, y, size, sprit_ptr,img,ray);
+		draw_sprite(spritescreenx, spritescreeny, spritescal, sprit,img,ray);
 
-		sprit_ptr = sprit_ptr->next;
+		sprit = sprit->next;
 	}
 
 }
