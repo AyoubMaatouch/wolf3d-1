@@ -6,12 +6,24 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 19:55:36 by ynoam             #+#    #+#             */
-/*   Updated: 2020/11/08 20:54:34 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/09 00:03:06 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
+
+/*
+int		sprite_tranc(int x, int y, int sp_size)
+{
+	int point;
+
+	point = (int)g_sptext.img_addr[g_sptext.w * (y * g_sptext.h / sp_size)
+				+ (x * g_sptext.w / sp_size)];
+	return (point);
+}
+
+*/
 void	draw_sprite(int x, int y, int size, t_sprit *ptr, t_images *img, t_rays ray[])
 {
 	int color;
@@ -28,15 +40,10 @@ void	draw_sprite(int x, int y, int size, t_sprit *ptr, t_images *img, t_rays ray
 		j = -1;
 		while (++j < size)
 		{
-			if (((x + i) >= 0 && (x + i) < g_data.win_width) && ((y + j) >= 0 && (y + j) < g_data.win_height))
-			{
-				if (j < 64 && i < 64)
-				{
-					color = g_txtr_sprit.addr[(j * g_txtr_sprit.height) + i];
-					if (color != 0)
+			color = g_txtr_sprit.addr[(j * g_txtr_sprit.height * g_txtr_sprit.height / size) + (i * g_txtr_sprit.width / size)];
+				if (color != 0)
+					if ((x + i >= 0 && x + i < g_data.win_width) && y + j >= 0 && y + j < g_data.win_height)
 						my_mlx_pixel_put(img, x + i, y + j, color);
-				}
-			}
 		}
 	}
 }
@@ -54,6 +61,8 @@ void	ft_is_sprit_visible(t_images *img, t_rays ray[])
 	{
 		dy = ((sprit->y) * TILE_SIZE - TILE_SIZE/2) - g_player.y;
 		dx = ((sprit->x) * TILE_SIZE - TILE_SIZE/2) - g_player.x;
+
+//		printf("%f %f\n", sprit->x, sprit->y);
 		sprit->distance = ft_distance(sprit->x * TILE_SIZE - TILE_SIZE/2, sprit->y * TILE_SIZE - TILE_SIZE/2);
 
 
@@ -73,19 +82,18 @@ void	ft_is_sprit_visible(t_images *img, t_rays ray[])
 		while (sprit_angle - g_player.direction < -180.0)
 			sprit_angle += 360.0;
 
-		float spritescal;
-		if (g_data.win_height > g_data.win_width)
-			spritescal = (g_data.win_height / sprit->distance) * g_txtr_sprit.height;
-		else
-			spritescal = (g_data.win_width / sprit->distance) * g_txtr_sprit.width;
+		float sprite_size;
+		//if (g_data.win_height > g_data.win_width)
+			sprite_size = (g_data.win_height / sprit->distance) * g_txtr_sprit.height;
+		//else
+			//sprite_size = (g_data.win_width / sprit->distance) * g_txtr_sprit.width;
 
-		float spritescreenx = (sprit_angle - g_player.direction) * (g_data.win_width) / 60 + ( (g_data.win_width) / 2 - spritescal / 2);
+		float spritescreen_x = (sprit_angle - g_player.direction) * (g_data.win_width) / FOV_ANGLE + ((g_data.win_width) / 2 - sprite_size / 2);
 
-		float spritescreeny = g_data.win_height / 2 - spritescal / 2;
+		float spritescreen_y = g_data.win_height / 2 - sprite_size / 2;
 
-		draw_sprite(spritescreenx, spritescreeny, spritescal, sprit,img,ray);
+		draw_sprite(spritescreen_x, spritescreen_y, sprite_size, sprit,img,ray);
 
 		sprit = sprit->next;
 	}
-
 }
