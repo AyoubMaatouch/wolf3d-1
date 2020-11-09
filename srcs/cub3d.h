@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 14:26:58 by ynoam             #+#    #+#             */
-/*   Updated: 2020/11/05 11:36:03 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/09 20:51:27 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,6 +144,9 @@ typedef	struct	s_sprit
 {
 	float	x;
 	float	y;
+	float	screen_x;
+	float	screen_y;
+	float	sprite_size;
 	float	distance;
 	int		visible;
 	struct s_sprit *next;
