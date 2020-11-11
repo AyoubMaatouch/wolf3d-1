@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_clc_sprit_dis.c                                 :+:      :+:    :+:   */
+/*   ft_sort_sprit.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/26 18:58:13 by ynoam             #+#    #+#             */
-/*   Updated: 2020/11/04 18:54:04 by ynoam            ###   ########.fr       */
+/*   Created: 2020/11/11 13:24:00 by ynoam             #+#    #+#             */
+/*   Updated: 2020/11/11 13:33:39 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	ft_clc_sprit_dis(void)
+void	ft_sort_sprit(void)
 {
 	t_sprit	*ptr;
 	t_sprit	*tmp;
@@ -26,10 +26,14 @@ void	ft_clc_sprit_dis(void)
 	ptr = g_sprits_ptr;
 	while (ptr != NULL)
 	{
-		tmp = ptr;
-		ptr = ptr->next;
-		if (ptr != NULL)
-			if (tmp->distance < ptr->distance)
+		tmp = ptr->next;
+		while (tmp != NULL)
+		{
+			if (tmp->distance > ptr->distance)
 				ft_swap_sprit_conts(tmp, ptr);
+			tmp = tmp->next;
+		}
+		ptr = ptr->next;
 	}
 }
+

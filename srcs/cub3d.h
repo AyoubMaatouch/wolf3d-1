@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 14:26:58 by ynoam             #+#    #+#             */
-/*   Updated: 2020/11/09 20:51:27 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/11 13:24:29 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,7 +146,7 @@ typedef	struct	s_sprit
 	float	y;
 	float	screen_x;
 	float	screen_y;
-	float	sprite_size;
+	float	size;
 	float	distance;
 	int		visible;
 	struct s_sprit *next;
@@ -206,7 +206,6 @@ void	cast_ray(t_rays *pointer);
 void	ft_addr_of_texture_img();
 void	ft_check_data(void);
 void	ft_check_texture(void);
-void	ft_clc_sprit_dis(void);
 void	ft_draw(void);
 void	ft_draw_3d(t_images *img, t_rays ray[]);
 void	ft_draw_all_rays(t_rays l_rays[]);
@@ -229,6 +228,10 @@ void	ft_update(int l_key);
 void	ft_update_player(void);
 void	my_mlx_pixel_put(t_images *data, int x, int y, int color);
 void	ft_swap_sprit_conts(t_sprit *one, t_sprit *two);
-void	ft_is_sprit_visible(t_images *img, t_rays ray[]);
+void	ft_is_sprit_visible(void);
 int		mlx_get_screen_size(void *mlx_ptr, int *sizex, int *sizey);
+void	draw_all_sprit(t_images *img,t_rays ray[]);
+void	draw_sprite(int x, int y , int size, t_sprit *ptr, t_images *img, t_rays ray[]);
+float	normalize_angle(float angle);
+void	ft_sort_sprit(void);
 #endif

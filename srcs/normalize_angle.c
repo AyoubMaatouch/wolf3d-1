@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_draw_spritis.c                                  :+:      :+:    :+:   */
+/*   normalize.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/01 20:25:04 by ynoam             #+#    #+#             */
-/*   Updated: 2020/11/01 20:33:23 by ynoam            ###   ########.fr       */
+/*   Created: 2020/11/11 13:13:54 by ynoam             #+#    #+#             */
+/*   Updated: 2020/11/11 13:16:28 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
 #include "cub3d.h"
 
-void	ft_draw_spritis(int x, int y, line_lenght, t_sprit *ptr)
+float	normalize_angle(float angle)
 {
+		while (angle < 0.0)
+			angle += 360.0;
+		while (angle > 360.0)
+			angle -= 360.0;
+		return (angle);
 }
-*/
