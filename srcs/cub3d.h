@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 14:26:58 by ynoam             #+#    #+#             */
-/*   Updated: 2020/11/11 13:24:29 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/13 19:46:11 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -234,4 +234,6 @@ void	draw_all_sprit(t_images *img,t_rays ray[]);
 void	draw_sprite(int x, int y , int size, t_sprit *ptr, t_images *img, t_rays ray[]);
 float	normalize_angle(float angle);
 void	ft_sort_sprit(void);
+void	save_image(void);
+void	third_argument(char *str);
 #endif
