@@ -97,7 +97,7 @@ my_pixel_get	srcs/my_pixel_get.c	/^int	my_pixel_get(int x, int y, int wich_txtr)
 normalize_angle	srcs/normalize_angle.c	/^float	normalize_angle(float angle)$/
 read_file	srcs/read_file.c	/^void	read_file(const char *str)$/
 read_map	srcs/read_map.c	/^void	read_map(int fd, int map, char *line, char *f/
-save_image	srcs/save_image.c	/^void	save_image(char *str)$/
+save_image	srcs/save_image.c	/^void	save_image(void)$/
 selection	srcs/selection.c	/^void	selection(char *line)$/
 t_images	srcs/cub3d.h	/^}				t_images;$/
 t_rays	srcs/cub3d.h	/^}				t_rays;$/
@@ -105,4 +105,5 @@ t_sprit	srcs/cub3d.h	/^}				t_sprit;$/
 thefillfun	libft/ft_split.c	/^static int		thefillfun(int x, char c, char **ptrsp/
 thefreefunction	libft/ft_split.c	/^static void		thefreefunction(char **ptr, int j)$/
 thefunlen	libft/ft_itoa.c	/^static int	thefunlen(unsigned int copy)$/
+third_argument	srcs/third_argument.c	/^void	third_argument(char *str)$/
 vimmercopy	libft/ft_memmove.c	/^static void	*vimmercopy(void *distination2, const /

@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/24 22:59:02 by ynoam             #+#    #+#             */
-/*   Updated: 2020/11/13 19:48:13 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/15 13:41:08 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ int	main(int argc, char *argv[])
 	if (argc == 2 || argc == 3)
 	{
 		ft_setup(argv[1]);
-		ft_draw();
 		if (argc == 3)
 			third_argument(argv[2]);
+		ft_draw();
 		mlx_hook(g_data.win_ptr, 2, 1L << 0, ft_loop, (void *)0);
 		mlx_hook(g_data.win_ptr, 17, 0, ft_red_bouton, (void *)0);
 		mlx_loop(g_data.mlx_ptr);

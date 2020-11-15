@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/13 19:44:22 by ynoam             #+#    #+#             */
-/*   Updated: 2020/11/13 19:44:56 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/15 14:47:36 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,7 @@
 
 void	third_argument(char *str)
 {
-	char *ptr;
-
-	ptr = str;
-	if (*ptr++ != '-')
-		if (*ptr++ != '-')
-			if (*ptr++ != 's')
-				if (*ptr++ != 'a')
-					if (*ptr++ != 'v')
-						if (*ptr++ != 'e')
-							if (*ptr != 0)
-								save_image();
-	ft_file_error("The save argument is wrong.\n");
+	if (ft_memcmp(str, "--save", 7) == 0)
+		save_image();
+	//ft_file_error("The save argument is wrong.\n");
 }
