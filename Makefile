@@ -6,7 +6,7 @@
 #    By: ynoam </var/mail/ynoam>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/24 22:45:25 by ynoam             #+#    #+#              #
-#    Updated: 2020/11/08 20:50:50 by ynoam            ###   ########.fr        #
+#    Updated: 2020/11/15 18:11:17 by ynoam            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,3 +39,5 @@ re : fclean all
 
 run:
 	./$(NAME) maps/map2.cub
+save:
+	./$(NAME) maps/map2.cub --save

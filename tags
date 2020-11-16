@@ -4,6 +4,8 @@ cast_all_rays	srcs/cast_all_rays.c	/^void	cast_all_rays(t_rays rays[])$/
 cast_ray	srcs/cast_ray.c	/^void	cast_ray(t_rays *ray)$/
 draw_all_sprit	srcs/draw_all_sprit.c	/^void	draw_all_sprit(t_images *img, t_rays ray[])$/
 draw_sprite	srcs/draw_sprite.c	/^void	draw_sprite(int x, int y , int size, t_sprit /
+fill_file_bitmap	srcs/fill_file_bitmap.c	/^void	fill_file_bitmap(t_images img)$/
+fill_header_bitmap	srcs/fill_header_bitmap.c	/^char	*fill_header_bitmap()$/
 forword	libft/ft_strtrim.c	/^static int		forword(char const *forstr, char const/
 ft_add_new_sprite	srcs/ft_add_new_sprite.c	/^t_sprit		*ft_add_new_sprite(int y, int x)$/
 ft_addr_of_texture_img	srcs/ft_addr_of_texture_img.c	/^void	ft_addr_of_texture_img(void)$/

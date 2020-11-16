@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/13 19:45:02 by ynoam             #+#    #+#             */
-/*   Updated: 2020/11/15 14:48:21 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/16 20:47:21 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,20 @@
 
 void	save_image(void)
 {
-	int		fd;
-	char	*image_name;
+	t_images	img;
+	t_rays		rays[g_data.win_width];
 
-	image_name = ft_strdup("screenshot.bmp");
-	if ((fd = open(image_name,O_TRUNC | O_WRONLY | O_CREAT, 400)) < 0)
-		ft_sys_error(image_name);
+	mlx_clear_window(g_data.mlx_ptr, g_data.win_ptr);
+	img.img = mlx_new_image(g_data.mlx_ptr, g_data.win_width,
+			g_data.win_height);
+	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel,
+			&img.line_length, &img.endian);
+	ft_update_player();
+	cast_all_rays(rays);
+	ft_draw_3d(&img, rays);
+	ft_sort_sprit();
+	ft_is_sprit_visible();
+	draw_all_sprit(&img, rays);
+	fill_file_bitmap(img);
+	exit(0);
 }
