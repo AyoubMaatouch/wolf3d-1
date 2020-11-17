@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 17:56:17 by ynoam             #+#    #+#             */
-/*   Updated: 2020/11/15 14:44:36 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/17 14:34:46 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ void	selection(char *line)
 {
 	if (g_data.map_ptr != NULL)
 		ft_file_error("You have to put the map in the end.\n");
-	else if (ft_memcmp(line, "R", 1) == 0 && g_data.win_width == -1 && g_data.win_height == -1)
+	else if (ft_memcmp(line, "R", 1) == 0 && g_data.win_width == -1
+			&& g_data.win_height == -1)
 		get_resolution(line);
 	else if (ft_memcmp(line, "F", 1) == 0 && g_data.floor == -1)
 		g_data.floor = get_color(line);
