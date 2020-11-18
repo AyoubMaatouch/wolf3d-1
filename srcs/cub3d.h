@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 14:26:58 by ynoam             #+#    #+#             */
-/*   Updated: 2020/11/17 20:29:25 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/18 18:34:15 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,9 +81,6 @@
 ** Macro for Colors.
 */
 
-# define ORANGE				(255 << 16 | 127 << 8)
-# define VIOLET				(139 << 16 | 255)
-# define YELLOW				(255 << 16 | 255 << 8)
 # define RED				0xff0000
 # define WHITE				0xffffff
 # define GOLD				0xffd700
@@ -166,7 +163,7 @@ typedef	struct	s_sprit
 ** turn = 1 , go left, turn = -1 , go right.
 */
 
-struct		s_player
+struct			s_player
 {
 	float	rotation;
 	float	direction;
@@ -177,7 +174,7 @@ struct		s_player
 	int		walk;
 	int		turn;
 	int		lateral;
-}			g_player;
+}				g_player;
 
 struct s_texture	g_txtr_n;
 struct s_texture	g_txtr_e;
@@ -242,5 +239,7 @@ void			third_argument(char *str);
 void			ft_check_first_last_line(void);
 int				ft_check_space(size_t j, char *str);
 void			check_single_position(void);
+void			draw_ciell_and_floor(t_images *img, int x,
+				int wall_top_pxl, int wall_bottom_pxl);
 
 #endif

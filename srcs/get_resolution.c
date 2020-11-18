@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 16:15:45 by ynoam             #+#    #+#             */
-/*   Updated: 2020/11/17 20:54:19 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/18 18:41:03 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ void	get_resolution(char *strim)
 	g_data.win_width = ft_atoi(parts[1]);
 	g_data.win_height = ft_atoi(parts[2]);
 	if (g_data.win_width < 1 || g_data.win_height < 1)
-		ft_file_error("the resolution data too small\n");
+		ft_file_error("the resolution data too small or too big\n");
 	else if (g_data.win_width > 2560 || g_data.win_height > 1440)
-		ft_file_error("the resolution data too small\n");
+		ft_file_error("the resolution data too small or too big\n");
 	ft_free_double_ptr(&parts);
 }
