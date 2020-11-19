@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 14:26:58 by ynoam             #+#    #+#             */
-/*   Updated: 2020/11/18 18:34:15 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/19 14:02:31 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,6 +125,14 @@ typedef	struct	s_images
 	int				endian;
 }				t_images;
 
+typedef struct	s_four_var
+{
+	int		var1;
+	int		var2;
+	int		var3;
+	int		var4;
+}				t_four_var;
+
 struct			s_texture
 {
 	char			*file;
@@ -241,5 +249,7 @@ int				ft_check_space(size_t j, char *str);
 void			check_single_position(void);
 void			draw_ciell_and_floor(t_images *img, int x,
 				int wall_top_pxl, int wall_bottom_pxl);
+
+void			draw_wall(t_images *img, t_rays ray[], int arr[]);
 
 #endif
