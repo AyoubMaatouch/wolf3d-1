@@ -2,10 +2,13 @@ Mmain	srcs/main.c	/^int	main(int argc, char *argv[])$/
 backword	libft/ft_strtrim.c	/^static int		backword(char const *backstr, char con/
 cast_all_rays	srcs/cast_all_rays.c	/^void	cast_all_rays(t_rays rays[])$/
 cast_ray	srcs/cast_ray.c	/^void	cast_ray(t_rays *ray)$/
+check_single_position	srcs/check_single_position.c	/^void	check_single_position(void)$/
 draw_all_sprit	srcs/draw_all_sprit.c	/^void	draw_all_sprit(t_images *img, t_rays ray[])$/
-draw_sprite	srcs/draw_sprite.c	/^void	draw_sprite(int x, int y , int size, t_sprit /
+draw_ciell_and_floor	srcs/draw_ciell_and_floor.c	/^void	draw_ciell_and_floor(t_images *img, int x,$/
+draw_sprite	srcs/draw_sprite.c	/^void	draw_sprite(int arr[], t_sprit *ptr, t_images/
+draw_wall	srcs/draw_wall.c	/^void	draw_wall(t_images *img, t_rays ray[], int ar/
 fill_file_bitmap	srcs/fill_file_bitmap.c	/^void	fill_file_bitmap(t_images img)$/
-fill_header_bitmap	srcs/fill_header_bitmap.c	/^char	*fill_header_bitmap()$/
+fill_header_bitmap	srcs/fill_header_bitmap.c	/^char	*fill_header_bitmap(void)$/
 forword	libft/ft_strtrim.c	/^static int		forword(char const *forstr, char const/
 ft_add_new_sprite	srcs/ft_add_new_sprite.c	/^t_sprit		*ft_add_new_sprite(int y, int x)$/
 ft_addr_of_texture_img	srcs/ft_addr_of_texture_img.c	/^void	ft_addr_of_texture_img(void)$/
@@ -13,10 +16,10 @@ ft_atoi	libft/ft_atoi.c	/^int	ft_atoi(const char *str)$/
 ft_bzero	libft/ft_bzero.c	/^void	ft_bzero(void *string, size_t n)$/
 ft_calloc	libft/ft_calloc.c	/^void	*ft_calloc(size_t count, size_t size)$/
 ft_check_data	srcs/ft_check_data.c	/^void	ft_check_data(void)$/
-ft_check_first_last_line	srcs/ft_check_map.c	/^void	ft_check_first_last_line(void)$/
+ft_check_first_last_line	srcs/ft_check_first_last_line.c	/^void	ft_check_first_last_line(void)$/
 ft_check_map	srcs/ft_check_map.c	/^void	ft_check_map(void)$/
 ft_check_map_line	srcs/ft_check_map_line.c	/^int	ft_check_map_line(char *str, int position)$/
-ft_check_space	srcs/ft_check_map.c	/^int		ft_check_space(size_t j, char *str)$/
+ft_check_space	srcs/ft_check_space.c	/^int		ft_check_space(size_t j, char *str)$/
 ft_check_texture	srcs/ft_check_texture.c	/^void	ft_check_texture(void)$/
 ft_check_texture_files	srcs/ft_check_texture_files.c	/^void	ft_check_texture_files(void)$/
 ft_cos	srcs/ft_cos.c	/^double	ft_cos(double angle)$/
@@ -101,6 +104,7 @@ read_file	srcs/read_file.c	/^void	read_file(const char *str)$/
 read_map	srcs/read_map.c	/^void	read_map(int fd, int map, char *line, char *f/
 save_image	srcs/save_image.c	/^void	save_image(void)$/
 selection	srcs/selection.c	/^void	selection(char *line)$/
+t_four_var	srcs/cub3d.h	/^}				t_four_var;$/
 t_images	srcs/cub3d.h	/^}				t_images;$/
 t_rays	srcs/cub3d.h	/^}				t_rays;$/
 t_sprit	srcs/cub3d.h	/^}				t_sprit;$/
