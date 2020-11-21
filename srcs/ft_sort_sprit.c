@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/11 13:24:00 by ynoam             #+#    #+#             */
-/*   Updated: 2020/11/17 14:36:18 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/21 18:34:10 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ void	ft_sort_sprit(void)
 	ptr = g_sprits_ptr;
 	while (ptr != NULL)
 	{
-		ptr->distance = ft_distance(ptr->x * TILE_SIZE, ptr->y * TILE_SIZE);
+		ptr->distance = ft_distance(ptr->x * TILE_SIZE +
+				HALF_TILE_SIZE, ptr->y * TILE_SIZE + HALF_TILE_SIZE);
 		ptr = ptr->next;
 	}
 	ptr = g_sprits_ptr;

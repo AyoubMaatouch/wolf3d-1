@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/11 13:21:08 by ynoam             #+#    #+#             */
-/*   Updated: 2020/11/21 14:59:19 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/21 17:31:47 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,10 @@ void	draw_sprite(int arr[], t_sprit *ptr, t_images *img, t_rays ray[])
 	int j;
 
 	i = -1;
-	printf("%d\n", arr[2]);
 	while (++i < arr[2])
 	{
 		if (arr[0] + i < 0 || arr[0] + i >= g_data.win_width)
 			continue;
-		printf("sprit = %f ; wall[%d] = %f\n", ptr->distance, arr[0] + i, ray[arr[0] +
-				i].distance);
 		if (ptr->distance >= ray[arr[0] + i].distance)
 			continue;
 		j = -1;
@@ -40,5 +37,4 @@ void	draw_sprite(int arr[], t_sprit *ptr, t_images *img, t_rays ray[])
 					my_mlx_pixel_put(img, arr[0] + i, arr[1] + j, color);
 		}
 	}
-	printf("############################################################################################\n");
 }

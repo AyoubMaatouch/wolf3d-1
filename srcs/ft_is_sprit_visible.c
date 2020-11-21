@@ -6,11 +6,17 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 19:55:36 by ynoam             #+#    #+#             */
-/*   Updated: 2020/11/21 13:40:43 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/21 17:17:22 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
+
+/*
+** sprit_angle = atan2(((s->y) * TILE_SIZE - (TILE_SIZE / 2)) - g_player.y,
+** ((s->x) * TILE_SIZE - (TILE_SIZE / 2)) - g_player.x)
+** * 180 / M_PI;
+*/
 
 void	ft_is_sprit_visible(void)
 {
@@ -21,9 +27,8 @@ void	ft_is_sprit_visible(void)
 	while (s != NULL)
 	{
 		g_player.direction = normalize_angle(g_player.direction);
-		sprit_angle = atan2(((s->y) * TILE_SIZE - (TILE_SIZE / 2)) - g_player.y,
-				((s->x) * TILE_SIZE - (TILE_SIZE / 2)) - g_player.x)
-			* 180 / M_PI;
+		sprit_angle = atan2((s->y * TILE_SIZE + HALF_TILE_SIZE) - g_player.y,
+				(s->x * TILE_SIZE + HALF_TILE_SIZE) - g_player.x) * 180 / M_PI;
 		while (sprit_angle - g_player.direction > 180.0)
 			sprit_angle -= 360.0;
 		while (sprit_angle - g_player.direction < -180.0)

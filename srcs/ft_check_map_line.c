@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/28 19:44:24 by ynoam             #+#    #+#             */
-/*   Updated: 2020/11/04 12:45:19 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/21 17:49:03 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int	ft_check_map_line(char *str, int position)
 				&& player == 0)
 		{
 			player = 1;
-			g_player.x = i * TILE_SIZE + (TILE_SIZE / 2);
-			g_player.y = (position + 1) * TILE_SIZE + (TILE_SIZE / 2);
+			g_player.x = i * TILE_SIZE + HALF_TILE_SIZE;
+			g_player.y = (position + 1) * TILE_SIZE + HALF_TILE_SIZE;
 			g_data.player_view = str[i];
 			i++;
 		}

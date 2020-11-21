@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 14:26:58 by ynoam             #+#    #+#             */
-/*   Updated: 2020/11/20 16:45:42 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/21 17:18:00 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@
 # define FALSE				0
 # define TRUE				1
 # define TILE_SIZE			64
+# define HALF_TILE_SIZE		32
 # define MINIMAP_SCALE		0.4
 
 /*

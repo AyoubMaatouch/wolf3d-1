@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/17 15:38:43 by ynoam             #+#    #+#             */
-/*   Updated: 2020/11/19 20:38:36 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/21 16:58:15 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	cast_ray(t_rays *ray)
 	//
 
 	xintercept = (int)(g_player.x / TILE_SIZE) * TILE_SIZE;
-	xintercept += ray->is_rayfacing_right ? TILE_SIZE : 0 ;
+	xintercept += ray->is_rayfacing_right ? TILE_SIZE : 0;
 
 	yintercept = g_player.y + (xintercept - g_player.x) * ft_tan(ray->ray_angle);
 
@@ -119,8 +119,8 @@ void	cast_ray(t_rays *ray)
 	else
 	{
 		ray->wall_content = hor_wall_content;
-		ray->wall_hitx =  hor_wall_x;
-		ray->wall_hity =  hor_wall_y;
+		ray->wall_hitx = hor_wall_x;
+		ray->wall_hity = hor_wall_y;
 		ray->was_hit_ver = FALSE;
 		ray->distance = hor_hit_dis;
 	}
