@@ -6,14 +6,14 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 19:47:08 by ynoam             #+#    #+#             */
-/*   Updated: 2020/11/17 14:43:23 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/21 13:52:38 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
 /*
-** ok this function is clearing and drawing whit images the whole windo
+** ok this function is clearing and drawing whit images the whole window
 ** after that updating the player position and destroy the image
 */
 
