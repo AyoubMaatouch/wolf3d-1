@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 14:26:58 by ynoam             #+#    #+#             */
-/*   Updated: 2020/11/21 17:18:00 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/23 20:45:30 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -252,5 +252,7 @@ void			draw_ciell_and_floor(t_images *img, int x,
 				int wall_top_pxl, int wall_bottom_pxl);
 
 void			draw_wall(t_images *img, t_rays ray[], int arr[]);
+void	raycast_hor(t_rays *ray, float *hor_wall_x, float *hor_wall_y, int
+		*found_hor_wall);
 
 #endif
