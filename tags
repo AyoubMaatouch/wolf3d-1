@@ -100,6 +100,8 @@ len	libft/get_next_line_utils.c	/^size_t	len(char *str)$/
 my_mlx_pixel_put	srcs/my_mlx_pixel_put.c	/^void	my_mlx_pixel_put(t_images *img, int x, int y,/
 my_pixel_get	srcs/my_pixel_get.c	/^int	my_pixel_get(int x, int y, int wich_txtr)$/
 normalize_angle	srcs/normalize_angle.c	/^float	normalize_angle(float angle)$/
+raycast_hor	srcs/raycast_hor.c	/^void	raycast_hor(t_rays *ray, float *hor_wall_x,$/
+raycast_ver	srcs/raycast_ver.c	/^void	raycast_ver(t_rays *ray, float *ver_wall_x,$/
 read_file	srcs/read_file.c	/^void	read_file(const char *str)$/
 read_map	srcs/read_map.c	/^void	read_map(int fd, int map, char *line, char *f/
 save_image	srcs/save_image.c	/^void	save_image(void)$/
