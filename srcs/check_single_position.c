@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 20:23:37 by ynoam             #+#    #+#             */
-/*   Updated: 2020/11/17 20:43:16 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/25 18:45:33 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	check_single_position(void)
 {
-	size_t	i;
-	size_t	j;
-	size_t	k;
+	int	i;
+	int	j;
+	int	k;
 
 	i = 0;
-	while (i++ < (size_t)g_data.map_height - 1)
+	while (i++ < g_data.map_height - 1)
 	{
 		j = -1;
 		k = ft_strlen(g_data.map_ptr[i]);

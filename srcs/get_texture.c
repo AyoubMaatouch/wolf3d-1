@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 17:57:16 by ynoam             #+#    #+#             */
-/*   Updated: 2020/11/04 16:35:02 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/25 18:24:59 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,14 @@ char	*get_texture(char *strim)
 	parts = ft_split(strim, ' ');
 	while (parts[i++])
 		;
-	if (i != 3)
+	if (i < 3)
 		ft_file_error("Something wrong in texture line.\n");
-	texture = ft_strdup(parts[1]);
+	i = 0;
+	while (ft_isalpha(strim[i]))
+		i++;
+	while (strim[i] == ' ')
+		i++;
+	texture = ft_strdup(&strim[i]);
 	ft_free_double_ptr(&parts);
 	return (texture);
 }

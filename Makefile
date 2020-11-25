@@ -6,7 +6,7 @@
 #    By: ynoam </var/mail/ynoam>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/24 22:45:25 by ynoam             #+#    #+#              #
-#    Updated: 2020/11/25 10:59:35 by ynoam            ###   ########.fr        #
+#    Updated: 2020/11/25 18:34:06 by ynoam            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ SRC = cast_all_rays.c cast_ray.c check_single_position.c draw_all_sprit.c \
 
 SRCS = $(addprefix srcs/, $(SRC))
 
-#DEBUG = -g -fsanitize=address
+DEBUG = -g -fsanitize=address
 
 CC = gcc -Werror -Wall -Wextra
 
