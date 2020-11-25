@@ -6,7 +6,7 @@
 /*   By: ynoam <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/17 10:12:26 by ynoam             #+#    #+#             */
-/*   Updated: 2020/05/06 14:14:24 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/25 10:05:07 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,6 @@ char	*ft_sub(char *string)
 	x = 0;
 	if (string == NULL)
 	{
-		/*
-		return(NULL);
-		*/
 		baby = malloc(1);
 		baby[0] = 0;
 		return (baby);

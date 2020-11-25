@@ -6,7 +6,7 @@
 /*   By: ynoam <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/25 23:27:04 by ynoam             #+#    #+#             */
-/*   Updated: 2020/10/23 17:32:21 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/25 10:05:17 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include "get_next_line.h"
-
 
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
