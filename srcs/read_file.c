@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 14:30:29 by ynoam             #+#    #+#             */
-/*   Updated: 2020/11/15 14:43:28 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/29 22:32:41 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,8 @@ void	read_file(const char *str)
 	int		fd;
 	int		map_begin_line;
 	char	*line;
-	char	*str2;
 
 	map_begin_line = 0;
-	str2 = NULL;
 	ft_file_extention(str, ".cub");
 	if ((fd = open(str, O_RDONLY)) == -1)
 		ft_sys_error((char *)str);
@@ -32,14 +30,13 @@ void	read_file(const char *str)
 	{
 		if (ft_isdata_begin(line))
 		{
-			selection((str2 = ft_strtrim(line, " ")));
+			selection(line);
 			ft_free(&line);
 		}
 		else if (ft_ismap_begin(line))
 			read_map(fd, map_begin_line, line, (char*)str);
 		else
 			ft_isnothing(line);
-		ft_free(&str2);
 	}
 	ft_free(&line);
 }

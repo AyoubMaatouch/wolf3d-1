@@ -6,11 +6,11 @@
 #    By: ynoam </var/mail/ynoam>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/24 22:45:25 by ynoam             #+#    #+#              #
-#    Updated: 2020/11/25 18:34:06 by ynoam            ###   ########.fr        #
+#    Updated: 2020/11/30 00:44:22 by ynoam            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = cub3d
+NAME = cub3D
 
 SRC = cast_all_rays.c cast_ray.c check_single_position.c draw_all_sprit.c \
 			draw_ciell_and_floor.c draw_sprite.c draw_wall.c fill_file_bitmap.c \
@@ -27,12 +27,11 @@ SRC = cast_all_rays.c cast_ray.c check_single_position.c draw_all_sprit.c \
 			get_resolution.c get_rgb.c get_texture.c has_wall_at.c main.c \
 			my_mlx_pixel_put.c my_pixel_get.c normalize_angle.c raycast_hor.c \
 			raycast_ver.c read_file.c read_map.c save_image.c selection.c \
-			third_argument.c
+			third_argument.c ft_check_line_space_last.c
 
 SRCS = $(addprefix srcs/, $(SRC))
 
-DEBUG = -g -fsanitize=address
-
+DEBUG = -g #-fsanitize=address
 CC = gcc -Werror -Wall -Wextra
 
 FRMWORK_FLG = -lmlx -framework OpenGL -framework AppKit
@@ -41,7 +40,7 @@ all: $(NAME)
 
 $(NAME): $(SRCS) Makefile libft/*.c libft/libft.h
 	@make -C libft
-	@$(CC) -o $(NAME) $(DEBUG) $(SRCS) libft/libft.a $(FRMWORK_FLG)
+	@$(CC) -o $(NAME) $(DEBUG) $(SRCS) libft/libft.a $(FRMWORK_FLG) && export ASAN_OPTIONS=detect_leaks=1
 	@echo "Compilation of $(NAME):	\033[1;32mOK\033[m"
 
 clean:

@@ -6,7 +6,7 @@
 /*   By: yousseff <ynoam@student.1337.ma>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/16 18:25:28 by yousseff          #+#    #+#             */
-/*   Updated: 2020/11/04 16:29:18 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/29 22:51:01 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,6 @@ void		get_resolution(char *strim);
 void		read_file(const char *str);
 void		read_map(int fd, int map, char *line, char *filename);
 void		selection(char *line);
+void		ft_check_line_space_last(char *str);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ynoam <ynoam@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/28 19:44:24 by ynoam             #+#    #+#             */
-/*   Updated: 2020/11/21 17:49:03 by ynoam            ###   ########.fr       */
+/*   Updated: 2020/11/29 22:22:56 by ynoam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	ft_check_map_line(char *str, int position)
 				|| str[i] == ' ')
 			i++;
 		else if (player == 1)
-			ft_map_error("Duplicate player.\n");
+			ft_map_error("You have a non allowed caracter in the map.\n");
 		else
 			ft_map_error("You have a non allowed caracter in the map.\n");
 	return (i);
